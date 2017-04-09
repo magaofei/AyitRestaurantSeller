@@ -1,6 +1,0 @@
-framework module Pods_AyitRestaurantSellerUITests {
-  umbrella header "Pods-AyitRestaurantSellerUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

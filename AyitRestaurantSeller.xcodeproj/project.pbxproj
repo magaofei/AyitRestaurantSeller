@@ -20,6 +20,8 @@
 		228FA0241E9A7C12005436F2 /* UploadGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA0231E9A7C12005436F2 /* UploadGoodsViewController.m */; };
 		228FA0271E9A7C36005436F2 /* OrderManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA0261E9A7C36005436F2 /* OrderManagementViewController.m */; };
 		228FA02B1E9A7E5D005436F2 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA02A1E9A7E5D005436F2 /* TabBarViewController.m */; };
+		228FA02E1E9B1B9C005436F2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA02D1E9B1B9C005436F2 /* RegisterViewController.m */; };
+		228FA0311E9B1BB7005436F2 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA0301E9B1BB7005436F2 /* ForgetPasswordViewController.m */; };
 		7B65E137632B7A1B5685DC02 /* Pods_AyitRestaurantSellerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D19B428F9C7AA7F73F73CC /* Pods_AyitRestaurantSellerUITests.framework */; };
 		EFA68F6F2120972780091E16 /* Pods_AyitRestaurantSellerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0F4E49248B960E5039C433 /* Pods_AyitRestaurantSellerTests.framework */; };
 		F0433DFA85F2B0DCD9086288 /* Pods_AyitRestaurantSeller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A1943AC9B863B047F76697 /* Pods_AyitRestaurantSeller.framework */; };
@@ -71,6 +73,10 @@
 		228FA0261E9A7C36005436F2 /* OrderManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderManagementViewController.m; path = Class/OrderManagement/Controller/OrderManagementViewController.m; sourceTree = "<group>"; };
 		228FA0291E9A7E5D005436F2 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarViewController.h; path = Class/Main/Controller/TabBarViewController.h; sourceTree = "<group>"; };
 		228FA02A1E9A7E5D005436F2 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarViewController.m; path = Class/Main/Controller/TabBarViewController.m; sourceTree = "<group>"; };
+		228FA02C1E9B1B9C005436F2 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Class/Login/Controller/RegisterViewController.h; sourceTree = "<group>"; };
+		228FA02D1E9B1B9C005436F2 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Class/Login/Controller/RegisterViewController.m; sourceTree = "<group>"; };
+		228FA02F1E9B1BB7005436F2 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgetPasswordViewController.h; path = Class/Login/Controller/ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		228FA0301E9B1BB7005436F2 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgetPasswordViewController.m; path = Class/Login/Controller/ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		72A1943AC9B863B047F76697 /* Pods_AyitRestaurantSeller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantSeller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0F4E49248B960E5039C433 /* Pods_AyitRestaurantSellerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantSellerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		804F67EFAD5E193CA31F4074 /* Pods-AyitRestaurantSellerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantSellerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantSellerTests/Pods-AyitRestaurantSellerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +260,10 @@
 			children = (
 				228FA00E1E9A3651005436F2 /* LoginViewController.h */,
 				228FA00F1E9A3651005436F2 /* LoginViewController.m */,
+				228FA02C1E9B1B9C005436F2 /* RegisterViewController.h */,
+				228FA02D1E9B1B9C005436F2 /* RegisterViewController.m */,
+				228FA02F1E9B1BB7005436F2 /* ForgetPasswordViewController.h */,
+				228FA0301E9B1BB7005436F2 /* ForgetPasswordViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -650,8 +660,10 @@
 			files = (
 				228FA0151E9A372A005436F2 /* AccountItem.m in Sources */,
 				228FA0271E9A7C36005436F2 /* OrderManagementViewController.m in Sources */,
+				228FA0311E9B1BB7005436F2 /* ForgetPasswordViewController.m in Sources */,
 				228F9FD51E9A3415005436F2 /* AppDelegate.m in Sources */,
 				228F9FD21E9A3415005436F2 /* main.m in Sources */,
+				228FA02E1E9B1B9C005436F2 /* RegisterViewController.m in Sources */,
 				228FA02B1E9A7E5D005436F2 /* TabBarViewController.m in Sources */,
 				228FA01B1E9A7B7A005436F2 /* PersonalViewController.m in Sources */,
 				228FA0241E9A7C12005436F2 /* UploadGoodsViewController.m in Sources */,

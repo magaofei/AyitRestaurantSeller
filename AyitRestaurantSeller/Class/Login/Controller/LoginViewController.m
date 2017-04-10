@@ -8,6 +8,9 @@
 
 #import "TabBarViewController.h"
 #import "LoginViewController.h"
+#import "RegisterViewController.h"
+#import "ForgetPasswordViewController.h"
+
 #import <Masonry/Masonry.h>
 
 @interface LoginViewController ()
@@ -22,6 +25,19 @@
 @property (nonatomic, strong) UILabel *passwordLabel;
 @property (nonatomic, strong) UIImageView *iconLogoView;
 @property (nonatomic, strong) UIView *loginInfoView;
+
+
+/**
+ 注册
+ 
+ */
+@property (nonatomic, strong) UIButton *registerBtn;
+
+
+/**
+ 忘记密码
+ */
+@property (nonatomic, strong) UIButton *forgetPasswordBtn;
 
 @end
 
@@ -109,6 +125,8 @@
     
     // 提示文字
     _tipLabel = [[UILabel alloc] init];
+    _tipLabel.font = [UIFont systemFontOfSize:12];
+    _tipLabel.textColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
     [self.view addSubview:_tipLabel];
     
     
@@ -119,9 +137,46 @@
     [self.view addSubview:_iconLogoView];
     
     _loadingIndicatorView = [[UIActivityIndicatorView alloc] init];
+    [self.view addSubview:_loadingIndicatorView];
+    
+    // 注册
+    _registerBtn = [[UIButton alloc] init];
+    _registerBtn.titleLabel.text = @"注册";
+    [_registerBtn addTarget:self action:@selector(clickRegisterBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_registerBtn];
+    
+    
+    
+    // 忘记密码
+    _forgetPasswordBtn = [[UIButton alloc] init];
+    _forgetPasswordBtn.titleLabel.text = @"忘记密码？";
+    [_forgetPasswordBtn addTarget:self action:@selector(clickForgetPasswordBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_forgetPasswordBtn];
+    
     
     
     [self layoutWidget];
+}
+
+
+/**
+ 点击注册按钮，跳转注册控制器
+ */
+- (void)clickRegisterBtn {
+    RegisterViewController *regVC = [[RegisterViewController alloc] init];
+    
+    [self.navigationController presentViewController:regVC animated:YES completion:nil];
+}
+
+
+/**
+ 点击忘记密码按钮，跳转控制器
+ */
+- (void) clickForgetPasswordBtn {
+    ForgetPasswordViewController *forgetVC = [[ForgetPasswordViewController alloc] init];
+    [self.navigationController presentViewController:forgetVC animated:YES completion:nil];
+    
+    
 }
 
 - (void)layoutWidget {
@@ -191,10 +246,36 @@
 //        make.centerX
     }];
     
-    
+    // 登录框的菊花圈
+    [_loadingIndicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(_loginButton.mas_centerX);
+        make.centerY.equalTo(_loginButton.mas_centerY);
+    }];
     
     // tipInfo
+    [_tipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_loginButton.mas_bottom).offset(40);
+        make.left.equalTo(self.view.mas_left).offset(30);
+    }];
+    
     // tipText
+    
+    [_tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_tipImageView.mas_right).offset(5);
+        make.centerY.equalTo(_tipImageView.mas_centerY);
+    }];
+    
+    [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view.mas_bottom).offset(-20);
+        make.left.equalTo(self.view.mas_left).offset(30);
+    }];;
+    
+    
+    [_forgetPasswordBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view.mas_right).offset(-30);
+        make.centerY.equalTo(_registerBtn.mas_centerY);
+    }];
+    
     
     
 

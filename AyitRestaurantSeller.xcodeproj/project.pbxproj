@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		227C015C1E9CAC8200E05BF9 /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C015B1E9CAC8200E05BF9 /* OrderTableViewCell.m */; };
+		227C015F1E9CACBB00E05BF9 /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C015E1E9CACBB00E05BF9 /* OrderItem.m */; };
 		228F9FD21E9A3415005436F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 228F9FD11E9A3415005436F2 /* main.m */; };
 		228F9FD51E9A3415005436F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 228F9FD41E9A3415005436F2 /* AppDelegate.m */; };
 		228F9FDB1E9A3415005436F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228F9FD91E9A3415005436F2 /* Main.storyboard */; };
@@ -47,6 +49,10 @@
 /* Begin PBXFileReference section */
 		012C0E4FE3A4AF9488FE63E6 /* Pods-AyitRestaurantSellerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantSellerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantSellerUITests/Pods-AyitRestaurantSellerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		05B4A0646F660908AD37F840 /* Pods-AyitRestaurantSellerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantSellerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantSellerTests/Pods-AyitRestaurantSellerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		227C015A1E9CAC8200E05BF9 /* OrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderTableViewCell.h; path = Class/OrderManagement/View/OrderTableViewCell.h; sourceTree = "<group>"; };
+		227C015B1E9CAC8200E05BF9 /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderTableViewCell.m; path = Class/OrderManagement/View/OrderTableViewCell.m; sourceTree = "<group>"; };
+		227C015D1E9CACBB00E05BF9 /* OrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderItem.h; path = Class/OrderManagement/Model/OrderItem.h; sourceTree = "<group>"; };
+		227C015E1E9CACBB00E05BF9 /* OrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderItem.m; path = Class/OrderManagement/Model/OrderItem.m; sourceTree = "<group>"; };
 		228F9FCD1E9A3415005436F2 /* AyitRestaurantSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AyitRestaurantSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228F9FD11E9A3415005436F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		228F9FD31E9A3415005436F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -319,6 +325,8 @@
 		228FA01D1E9A7BA1005436F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				227C015D1E9CACBB00E05BF9 /* OrderItem.h */,
+				227C015E1E9CACBB00E05BF9 /* OrderItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -326,6 +334,8 @@
 		228FA01E1E9A7BA2005436F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				227C015A1E9CAC8200E05BF9 /* OrderTableViewCell.h */,
+				227C015B1E9CAC8200E05BF9 /* OrderTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -661,11 +671,13 @@
 				228FA0151E9A372A005436F2 /* AccountItem.m in Sources */,
 				228FA0271E9A7C36005436F2 /* OrderManagementViewController.m in Sources */,
 				228FA0311E9B1BB7005436F2 /* ForgetPasswordViewController.m in Sources */,
+				227C015C1E9CAC8200E05BF9 /* OrderTableViewCell.m in Sources */,
 				228F9FD51E9A3415005436F2 /* AppDelegate.m in Sources */,
 				228F9FD21E9A3415005436F2 /* main.m in Sources */,
 				228FA02E1E9B1B9C005436F2 /* RegisterViewController.m in Sources */,
 				228FA02B1E9A7E5D005436F2 /* TabBarViewController.m in Sources */,
 				228FA01B1E9A7B7A005436F2 /* PersonalViewController.m in Sources */,
+				227C015F1E9CACBB00E05BF9 /* OrderItem.m in Sources */,
 				228FA0241E9A7C12005436F2 /* UploadGoodsViewController.m in Sources */,
 				228FA0101E9A3651005436F2 /* LoginViewController.m in Sources */,
 			);

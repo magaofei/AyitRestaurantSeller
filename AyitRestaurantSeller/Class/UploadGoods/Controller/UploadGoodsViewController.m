@@ -4,7 +4,7 @@
 //
 //  Created by MAMIAN on 2017/4/9.
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
-//
+//  上传商品界面
 
 #import "UploadGoodsViewController.h"
 
@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"上传商品";
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }
 

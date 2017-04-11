@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    [self initAllViewController];
 }
 
 - (void)initAllViewController {
@@ -30,12 +30,22 @@
     UploadGoodsViewController *uploadgoodsVC = [[UploadGoodsViewController alloc] init];
     OrderManagementViewController *orderManagementVC = [[OrderManagementViewController alloc] init];
     
+    orderManagementVC.tabBarItem.title = @"订单管理";
+    uploadgoodsVC.tabBarItem.title = @"上传商品";
+    personalVC.tabBarItem.title = @"信息管理";
+    
+    orderManagementVC.tabBarItem.image = [UIImage imageNamed:@"orderManagement"];
+    uploadgoodsVC.tabBarItem.image = [UIImage imageNamed:@"uploadgoods"];
+    personalVC.tabBarItem.image = [UIImage imageNamed:@"personal"];
+    
+    
     
     UINavigationController *orderManagementNav = [[UINavigationController alloc]
                                                   initWithRootViewController:orderManagementVC];
     
     UINavigationController *uploadGoodsNav = [[UINavigationController alloc]
                                               initWithRootViewController:uploadgoodsVC];
+#pragma mark - TODO : 下一步 ,把上传商品页面改为 present调起 
     
     UINavigationController *personalNav = [[UINavigationController alloc]
                                            initWithRootViewController:personalVC];

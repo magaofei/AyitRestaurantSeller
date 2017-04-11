@@ -8,6 +8,11 @@
 
 #import "RegisterViewController.h"
 
+// 用户id
+// 联系人
+// 商家名称
+// 商家电话
+// 商家地址
 @interface RegisterViewController ()
 
 @end
@@ -17,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = @"注册";
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

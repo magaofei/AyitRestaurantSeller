@@ -52,6 +52,10 @@
     
     //设置界面
     [self initSubviews];
+    
+    // 默认
+    _accountTextField.text = @"admin";
+    _passwordTextField.text = @"test";
 }
 
 
@@ -140,17 +144,22 @@
     [self.view addSubview:_loadingIndicatorView];
     
     // 注册
-    _registerBtn = [[UIButton alloc] init];
-    _registerBtn.titleLabel.text = @"注册";
+    _registerBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_registerBtn setTitle:@"注册" forState:UIControlStateNormal];
+//    _registerBtn.titleLabel.text = @"注册";
     [_registerBtn addTarget:self action:@selector(clickRegisterBtn) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     [self.view addSubview:_registerBtn];
     
     
     
     // 忘记密码
-    _forgetPasswordBtn = [[UIButton alloc] init];
-    _forgetPasswordBtn.titleLabel.text = @"忘记密码？";
+    _forgetPasswordBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+//    _forgetPasswordBtn.titleLabel.text = @"忘记密码？";
+    [_forgetPasswordBtn setTitle:@"忘记密码?" forState:UIControlStateNormal];
     [_forgetPasswordBtn addTarget:self action:@selector(clickForgetPasswordBtn) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:_forgetPasswordBtn];
     
     
@@ -164,8 +173,8 @@
  */
 - (void)clickRegisterBtn {
     RegisterViewController *regVC = [[RegisterViewController alloc] init];
-    
-    [self.navigationController presentViewController:regVC animated:YES completion:nil];
+    [self.navigationController pushViewController:regVC animated:YES];
+//    [self.navigationController presentViewController:regVC animated:YES completion:nil];
 }
 
 
@@ -174,7 +183,8 @@
  */
 - (void) clickForgetPasswordBtn {
     ForgetPasswordViewController *forgetVC = [[ForgetPasswordViewController alloc] init];
-    [self.navigationController presentViewController:forgetVC animated:YES completion:nil];
+    [self.navigationController pushViewController:forgetVC animated:YES];
+//    [self.navigationController presentViewController:forgetVC animated:YES completion:nil];
     
     
 }
@@ -268,7 +278,9 @@
     [_registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view.mas_bottom).offset(-20);
         make.left.equalTo(self.view.mas_left).offset(30);
-    }];;
+        make.height.equalTo(@30);
+        
+    }];
     
     
     [_forgetPasswordBtn mas_makeConstraints:^(MASConstraintMaker *make) {

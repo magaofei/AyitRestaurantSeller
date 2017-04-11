@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		227C015C1E9CAC8200E05BF9 /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C015B1E9CAC8200E05BF9 /* OrderTableViewCell.m */; };
 		227C015F1E9CACBB00E05BF9 /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C015E1E9CACBB00E05BF9 /* OrderItem.m */; };
+		227C01611E9CCD2800E05BF9 /* OrderDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227C01601E9CCD2800E05BF9 /* OrderDemo.xib */; };
 		228F9FD21E9A3415005436F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 228F9FD11E9A3415005436F2 /* main.m */; };
 		228F9FD51E9A3415005436F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 228F9FD41E9A3415005436F2 /* AppDelegate.m */; };
 		228F9FDB1E9A3415005436F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228F9FD91E9A3415005436F2 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		227C015B1E9CAC8200E05BF9 /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderTableViewCell.m; path = Class/OrderManagement/View/OrderTableViewCell.m; sourceTree = "<group>"; };
 		227C015D1E9CACBB00E05BF9 /* OrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderItem.h; path = Class/OrderManagement/Model/OrderItem.h; sourceTree = "<group>"; };
 		227C015E1E9CACBB00E05BF9 /* OrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderItem.m; path = Class/OrderManagement/Model/OrderItem.m; sourceTree = "<group>"; };
+		227C01601E9CCD2800E05BF9 /* OrderDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderDemo.xib; sourceTree = "<group>"; };
 		228F9FCD1E9A3415005436F2 /* AyitRestaurantSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AyitRestaurantSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228F9FD11E9A3415005436F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		228F9FD31E9A3415005436F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			children = (
 				227C015A1E9CAC8200E05BF9 /* OrderTableViewCell.h */,
 				227C015B1E9CAC8200E05BF9 /* OrderTableViewCell.m */,
+				227C01601E9CCD2800E05BF9 /* OrderDemo.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				228F9FE01E9A3415005436F2 /* LaunchScreen.storyboard in Resources */,
 				228F9FDD1E9A3415005436F2 /* Assets.xcassets in Resources */,
 				228F9FDB1E9A3415005436F2 /* Main.storyboard in Resources */,
+				227C01611E9CCD2800E05BF9 /* OrderDemo.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,6 +837,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N5G28WF2Y2;
 				INFOPLIST_FILE = AyitRestaurantSeller/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantSeller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -846,6 +851,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N5G28WF2Y2;
 				INFOPLIST_FILE = AyitRestaurantSeller/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantSeller;
 				PRODUCT_NAME = "$(TARGET_NAME)";

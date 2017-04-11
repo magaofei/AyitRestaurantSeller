@@ -15,6 +15,9 @@
 
 @property (nonatomic, strong) UITableView *infoTableView;
 
+// 列表信息
+@property (nonatomic, copy) NSArray *listArr;
+
 
 @end
 
@@ -27,7 +30,12 @@ static NSString *infoCell = @"infoCell";
     self.navigationItem.title = @"信息管理";
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.listArr = @[@"联系方式", @"地址", @"退出"];
+    
     [self initSubviews];
+    
+    [self initCell];
+    
 }
 /**
  初始化子视图
@@ -42,8 +50,17 @@ static NSString *infoCell = @"infoCell";
     _infoTableView = [[UITableView alloc] init];
     [self.view addSubview:_infoTableView];
 //    _infoTableView.backgroundColor = [UIColor blueColor];
+    self.infoTableView.delegate = self;
+    self.infoTableView.dataSource = self;
+    
+    self.infoTableView.rowHeight = 50;
     
     [self layoutSubviews];
+    
+}
+
+/**Cell */
+- (void)initCell {
     
 }
 
@@ -74,7 +91,7 @@ static NSString *infoCell = @"infoCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.listArr.count;
 }
 
 
@@ -86,15 +103,29 @@ static NSString *infoCell = @"infoCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:infoCell];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:infoCell];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:infoCell];
         
     }
+    
+    
+    
+    cell.textLabel.text = self.listArr[indexPath.row];
+
+    
+    
     
     // cell setup
     
     
     return cell;
 }
+
+// 取消选中
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.infoTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
 /*
 #pragma mark - Navigation
 

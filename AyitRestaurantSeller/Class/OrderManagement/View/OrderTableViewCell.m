@@ -24,6 +24,8 @@
  子View
  */
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    
+    
     return 0;
 }
 

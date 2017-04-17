@@ -7,6 +7,8 @@
 //
 
 #import "OrderManagementViewController.h"
+#import "OrderTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #import <Masonry/Masonry.h>
 
 @interface OrderManagementViewController () <UISearchBarDelegate,UISearchResultsUpdating>
@@ -39,7 +41,7 @@ static NSString *cellName = @"cell";
  初始化子视图
  */
 - (void)initSubviews {
-    
+    self.tableView.rowHeight = 130;
 //    _headerView = [[UIView alloc] init];
 //    [self.view addSubview:_headerView];
 //    _headerView.backgroundColor = [UIColor purpleColor];
@@ -117,11 +119,13 @@ static NSString *cellName = @"cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
+    OrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellName];
+        cell = [[OrderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
         
     }
+    
+    [self testCellData:cell];
     
     // cell setup
     
@@ -143,10 +147,21 @@ static NSString *cellName = @"cell";
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 取消选择
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-
+-(void)testCellData:(OrderTableViewCell *)cell {
+    cell.nameLabel.text = @"联系人:李俊龙";
+    
+    [cell.goodsIcon sd_setImageWithURL:[NSURL URLWithString:@"http://img.spriteapp.cn/ugc/2016/03/10/092924_69853.jpg"]];
+    cell.phoneLabel.text = @"手机号:19603822432";
+    cell.goodsTitleLabel.text = @"红烧带鱼+米饭+豆角茄子";
+    cell.orderTimeLabel.text = @"2017.04.12 12:30:02";
+    cell.goodsPriceLabel.text = @"$216.50";
+    cell.orderStatusLabel.text = @"状态:已接受";
+    
+}
 
 
 /*

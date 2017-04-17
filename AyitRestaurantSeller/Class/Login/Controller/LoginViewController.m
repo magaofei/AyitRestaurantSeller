@@ -6,6 +6,17 @@
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
 //
 
+/**
+ 
+ 登录流程:
+ 登录之后,保存并返回Id 作为唯一标识再去请求商家ID 等信息 (用户ID和商家ID分离)
+ 再去跳转其他界面
+ 
+ */
+
+
+
+
 #import "TabBarViewController.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"

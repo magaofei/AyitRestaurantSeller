@@ -1,27 +1,42 @@
 //
-//  UploadGoodsViewController
+//  AddressViewController.m
 //  AyitRestaurantSeller
 //
-//  Created by MAMIAN on 2017/4/9.
+//  Created by MAMIAN on 2017/4/16.
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
-//  上传商品界面
-//  流程:
-//  图片上传接口单独, 发布和修改接口单独, 先发布, 再修改并将上传后的图片路径传送
+//  TextView
 
-#import "UploadGoodsViewController.h"
+#import "AddressViewController.h"
 
-@interface UploadGoodsViewController ()
+@interface AddressViewController ()
+
+@property (nonatomic, strong) UITextView *addressTextView;
 
 @end
 
-@implementation UploadGoodsViewController
+@implementation AddressViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.title = @"上传商品";
-    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = @"修改地址";
+    
+    [self initSubviews];
+    
+    [self loadData];
+}
+
+
+/**
+ 从服务器获取之前地址信息
+ */
+- (void)loadData {
+    
+}
+
+- (void)initSubviews {
+    _addressTextView = [[UITextView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view addSubview:_addressTextView];
 }
 
 - (void)didReceiveMemoryWarning {

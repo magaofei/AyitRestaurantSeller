@@ -1,26 +1,21 @@
 //
-//  UploadGoodsViewController
+//  ContactInformationViewController.m
 //  AyitRestaurantSeller
 //
-//  Created by MAMIAN on 2017/4/9.
+//  Created by MAMIAN on 2017/4/16.
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
-//  上传商品界面
-//  流程:
-//  图片上传接口单独, 发布和修改接口单独, 先发布, 再修改并将上传后的图片路径传送
+//
 
-#import "UploadGoodsViewController.h"
+#import "ContactInformationViewController.h"
 
-@interface UploadGoodsViewController ()
+@interface ContactInformationViewController ()
 
 @end
 
-@implementation UploadGoodsViewController
+@implementation ContactInformationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationItem.title = @"上传商品";
-    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
 }
 

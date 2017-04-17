@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223DEA9C1EA1FFFD00A4766B /* GoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEA9B1EA1FFFD00A4766B /* GoodsItem.m */; };
+		223DEA9F1EA2021200A4766B /* GoodsItemData.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEA9E1EA2021200A4766B /* GoodsItemData.m */; };
+		223DEAA71EA318C900A4766B /* GoodsManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEAA61EA318C900A4766B /* GoodsManagementViewController.m */; };
+		223DEAAA1EA39CFD00A4766B /* AddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEAA91EA39CFD00A4766B /* AddressViewController.m */; };
+		223DEAAD1EA39D1B00A4766B /* ContactInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEAAC1EA39D1B00A4766B /* ContactInformationViewController.m */; };
+		223DEAB61EA3A1A300A4766B /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEAB51EA3A1A300A4766B /* OrderDetailViewController.m */; };
+		223DEAB81EA3A44B00A4766B /* UploadGoodsDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223DEAB71EA3A44B00A4766B /* UploadGoodsDemo.xib */; };
+		223DEABB1EA4542C00A4766B /* GoodsManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEABA1EA4542C00A4766B /* GoodsManagementTableViewCell.m */; };
+		223DEABD1EA4543B00A4766B /* GoodsManagementTableViewCellDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223DEABC1EA4543B00A4766B /* GoodsManagementTableViewCellDemo.xib */; };
 		227C015C1E9CAC8200E05BF9 /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C015B1E9CAC8200E05BF9 /* OrderTableViewCell.m */; };
 		227C015F1E9CACBB00E05BF9 /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C015E1E9CACBB00E05BF9 /* OrderItem.m */; };
 		227C01611E9CCD2800E05BF9 /* OrderDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227C01601E9CCD2800E05BF9 /* OrderDemo.xib */; };
@@ -50,6 +59,23 @@
 /* Begin PBXFileReference section */
 		012C0E4FE3A4AF9488FE63E6 /* Pods-AyitRestaurantSellerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantSellerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantSellerUITests/Pods-AyitRestaurantSellerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		05B4A0646F660908AD37F840 /* Pods-AyitRestaurantSellerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantSellerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantSellerTests/Pods-AyitRestaurantSellerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		223DEA9A1EA1FFFD00A4766B /* GoodsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoodsItem.h; path = Class/UploadGoods/Model/GoodsItem.h; sourceTree = "<group>"; };
+		223DEA9B1EA1FFFD00A4766B /* GoodsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoodsItem.m; path = Class/UploadGoods/Model/GoodsItem.m; sourceTree = "<group>"; };
+		223DEA9D1EA2021200A4766B /* GoodsItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoodsItemData.h; path = Class/UploadGoods/Model/GoodsItemData.h; sourceTree = "<group>"; };
+		223DEA9E1EA2021200A4766B /* GoodsItemData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoodsItemData.m; path = Class/UploadGoods/Model/GoodsItemData.m; sourceTree = "<group>"; };
+		223DEAA51EA318C900A4766B /* GoodsManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsManagementViewController.h; sourceTree = "<group>"; };
+		223DEAA61EA318C900A4766B /* GoodsManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsManagementViewController.m; sourceTree = "<group>"; };
+		223DEAA81EA39CFD00A4766B /* AddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressViewController.h; path = Class/Personal/Controller/AddressViewController.h; sourceTree = "<group>"; };
+		223DEAA91EA39CFD00A4766B /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressViewController.m; path = Class/Personal/Controller/AddressViewController.m; sourceTree = "<group>"; };
+		223DEAAB1EA39D1B00A4766B /* ContactInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactInformationViewController.h; path = Class/Personal/Controller/ContactInformationViewController.h; sourceTree = "<group>"; };
+		223DEAAC1EA39D1B00A4766B /* ContactInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactInformationViewController.m; path = Class/Personal/Controller/ContactInformationViewController.m; sourceTree = "<group>"; };
+		223DEAAE1EA3A00800A4766B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Helper/PrefixHeader.pch; sourceTree = "<group>"; };
+		223DEAB41EA3A1A300A4766B /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderDetailViewController.h; path = Class/OrderManagement/OrderDetail/Controller/OrderDetailViewController.h; sourceTree = "<group>"; };
+		223DEAB51EA3A1A300A4766B /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetailViewController.m; path = Class/OrderManagement/OrderDetail/Controller/OrderDetailViewController.m; sourceTree = "<group>"; };
+		223DEAB71EA3A44B00A4766B /* UploadGoodsDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UploadGoodsDemo.xib; path = Class/UploadGoods/View/UploadGoodsDemo.xib; sourceTree = "<group>"; };
+		223DEAB91EA4542C00A4766B /* GoodsManagementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsManagementTableViewCell.h; sourceTree = "<group>"; };
+		223DEABA1EA4542C00A4766B /* GoodsManagementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsManagementTableViewCell.m; sourceTree = "<group>"; };
+		223DEABC1EA4543B00A4766B /* GoodsManagementTableViewCellDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsManagementTableViewCellDemo.xib; sourceTree = "<group>"; };
 		227C015A1E9CAC8200E05BF9 /* OrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderTableViewCell.h; path = Class/OrderManagement/View/OrderTableViewCell.h; sourceTree = "<group>"; };
 		227C015B1E9CAC8200E05BF9 /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderTableViewCell.m; path = Class/OrderManagement/View/OrderTableViewCell.m; sourceTree = "<group>"; };
 		227C015D1E9CACBB00E05BF9 /* OrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderItem.h; path = Class/OrderManagement/Model/OrderItem.h; sourceTree = "<group>"; };
@@ -132,6 +158,76 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		223DEAA11EA3185500A4766B /* GoodsManagement */ = {
+			isa = PBXGroup;
+			children = (
+				223DEAA21EA318A400A4766B /* Controller */,
+				223DEAA31EA318A400A4766B /* Model */,
+				223DEAA41EA318A400A4766B /* View */,
+			);
+			name = GoodsManagement;
+			path = Class/GoodsManagement;
+			sourceTree = "<group>";
+		};
+		223DEAA21EA318A400A4766B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				223DEAA51EA318C900A4766B /* GoodsManagementViewController.h */,
+				223DEAA61EA318C900A4766B /* GoodsManagementViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		223DEAA31EA318A400A4766B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		223DEAA41EA318A400A4766B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				223DEAB91EA4542C00A4766B /* GoodsManagementTableViewCell.h */,
+				223DEABA1EA4542C00A4766B /* GoodsManagementTableViewCell.m */,
+				223DEABC1EA4543B00A4766B /* GoodsManagementTableViewCellDemo.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		223DEAAF1EA3A13E00A4766B /* OrderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				223DEAB31EA3A15C00A4766B /* Controller */,
+				223DEAB21EA3A15400A4766B /* Model */,
+				223DEAB11EA3A14F00A4766B /* View */,
+			);
+			name = OrderDetail;
+			sourceTree = "<group>";
+		};
+		223DEAB11EA3A14F00A4766B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		223DEAB21EA3A15400A4766B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		223DEAB31EA3A15C00A4766B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				223DEAB41EA3A1A300A4766B /* OrderDetailViewController.h */,
+				223DEAB51EA3A1A300A4766B /* OrderDetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		228F9FC41E9A3415005436F2 = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +295,7 @@
 		228FA0031E9A348F005436F2 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				223DEAA11EA3185500A4766B /* GoodsManagement */,
 				228FA0091E9A35D9005436F2 /* Personal */,
 				228FA0081E9A35BE005436F2 /* UploadGoods */,
 				228FA0071E9A359C005436F2 /* OrderManagement */,
@@ -211,6 +308,7 @@
 		228FA0041E9A34C6005436F2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				223DEAAE1EA3A00800A4766B /* PrefixHeader.pch */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -236,6 +334,7 @@
 		228FA0071E9A359C005436F2 /* OrderManagement */ = {
 			isa = PBXGroup;
 			children = (
+				223DEAAF1EA3A13E00A4766B /* OrderDetail */,
 				228FA01E1E9A7BA2005436F2 /* View */,
 				228FA01D1E9A7BA1005436F2 /* Model */,
 				228FA01C1E9A7B9C005436F2 /* Controller */,
@@ -297,6 +396,10 @@
 			children = (
 				228FA0191E9A7B7A005436F2 /* PersonalViewController.h */,
 				228FA01A1E9A7B7A005436F2 /* PersonalViewController.m */,
+				223DEAA81EA39CFD00A4766B /* AddressViewController.h */,
+				223DEAA91EA39CFD00A4766B /* AddressViewController.m */,
+				223DEAAB1EA39D1B00A4766B /* ContactInformationViewController.h */,
+				223DEAAC1EA39D1B00A4766B /* ContactInformationViewController.m */,
 			);
 			name = "Controller ";
 			sourceTree = "<group>";
@@ -355,6 +458,10 @@
 		228FA0201E9A7BA4005436F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				223DEA9A1EA1FFFD00A4766B /* GoodsItem.h */,
+				223DEA9B1EA1FFFD00A4766B /* GoodsItem.m */,
+				223DEA9D1EA2021200A4766B /* GoodsItemData.h */,
+				223DEA9E1EA2021200A4766B /* GoodsItemData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -362,6 +469,7 @@
 		228FA0211E9A7BA4005436F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				223DEAB71EA3A44B00A4766B /* UploadGoodsDemo.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -508,6 +616,8 @@
 			files = (
 				228F9FE01E9A3415005436F2 /* LaunchScreen.storyboard in Resources */,
 				228F9FDD1E9A3415005436F2 /* Assets.xcassets in Resources */,
+				223DEABD1EA4543B00A4766B /* GoodsManagementTableViewCellDemo.xib in Resources */,
+				223DEAB81EA3A44B00A4766B /* UploadGoodsDemo.xib in Resources */,
 				228F9FDB1E9A3415005436F2 /* Main.storyboard in Resources */,
 				227C01611E9CCD2800E05BF9 /* OrderDemo.xib in Resources */,
 			);
@@ -677,13 +787,20 @@
 				228FA0311E9B1BB7005436F2 /* ForgetPasswordViewController.m in Sources */,
 				227C015C1E9CAC8200E05BF9 /* OrderTableViewCell.m in Sources */,
 				228F9FD51E9A3415005436F2 /* AppDelegate.m in Sources */,
+				223DEA9F1EA2021200A4766B /* GoodsItemData.m in Sources */,
 				228F9FD21E9A3415005436F2 /* main.m in Sources */,
+				223DEAAA1EA39CFD00A4766B /* AddressViewController.m in Sources */,
+				223DEABB1EA4542C00A4766B /* GoodsManagementTableViewCell.m in Sources */,
 				228FA02E1E9B1B9C005436F2 /* RegisterViewController.m in Sources */,
+				223DEAA71EA318C900A4766B /* GoodsManagementViewController.m in Sources */,
 				228FA02B1E9A7E5D005436F2 /* TabBarViewController.m in Sources */,
 				228FA01B1E9A7B7A005436F2 /* PersonalViewController.m in Sources */,
+				223DEAB61EA3A1A300A4766B /* OrderDetailViewController.m in Sources */,
 				227C015F1E9CACBB00E05BF9 /* OrderItem.m in Sources */,
 				228FA0241E9A7C12005436F2 /* UploadGoodsViewController.m in Sources */,
 				228FA0101E9A3651005436F2 /* LoginViewController.m in Sources */,
+				223DEAAD1EA39D1B00A4766B /* ContactInformationViewController.m in Sources */,
+				223DEA9C1EA1FFFD00A4766B /* GoodsItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

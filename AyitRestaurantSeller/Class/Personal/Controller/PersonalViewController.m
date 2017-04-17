@@ -123,6 +123,9 @@ static NSString *infoCell = @"infoCell";
 // 取消选中
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.infoTableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // 跳转
+    
 }
 
 

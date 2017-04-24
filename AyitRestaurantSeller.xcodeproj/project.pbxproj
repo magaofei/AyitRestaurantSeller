@@ -69,7 +69,6 @@
 		223DEAA91EA39CFD00A4766B /* AddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressViewController.m; path = Class/Personal/Controller/AddressViewController.m; sourceTree = "<group>"; };
 		223DEAAB1EA39D1B00A4766B /* ContactInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactInformationViewController.h; path = Class/Personal/Controller/ContactInformationViewController.h; sourceTree = "<group>"; };
 		223DEAAC1EA39D1B00A4766B /* ContactInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactInformationViewController.m; path = Class/Personal/Controller/ContactInformationViewController.m; sourceTree = "<group>"; };
-		223DEAAE1EA3A00800A4766B /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Helper/PrefixHeader.pch; sourceTree = "<group>"; };
 		223DEAB41EA3A1A300A4766B /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderDetailViewController.h; path = Class/OrderManagement/OrderDetail/Controller/OrderDetailViewController.h; sourceTree = "<group>"; };
 		223DEAB51EA3A1A300A4766B /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetailViewController.m; path = Class/OrderManagement/OrderDetail/Controller/OrderDetailViewController.m; sourceTree = "<group>"; };
 		223DEAB71EA3A44B00A4766B /* UploadGoodsDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UploadGoodsDemo.xib; path = Class/UploadGoods/View/UploadGoodsDemo.xib; sourceTree = "<group>"; };
@@ -156,6 +155,21 @@
 				84D19B428F9C7AA7F73F73CC /* Pods_AyitRestaurantSellerUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		222FC7091EAB4A5600DE91EB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				222FC70A1EAB4A5B00DE91EB /* Network */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		222FC70A1EAB4A5B00DE91EB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 		223DEAA11EA3185500A4766B /* GoodsManagement */ = {
@@ -253,7 +267,7 @@
 		228F9FCF1E9A3415005436F2 /* AyitRestaurantSeller */ = {
 			isa = PBXGroup;
 			children = (
-				228FA0041E9A34C6005436F2 /* Helper */,
+				222FC7091EAB4A5600DE91EB /* Helper */,
 				228FA0031E9A348F005436F2 /* Class */,
 				228F9FD31E9A3415005436F2 /* AppDelegate.h */,
 				228F9FD41E9A3415005436F2 /* AppDelegate.m */,
@@ -303,14 +317,6 @@
 				228FA0051E9A34F2005436F2 /* Main */,
 			);
 			name = Class;
-			sourceTree = "<group>";
-		};
-		228FA0041E9A34C6005436F2 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				223DEAAE1EA3A00800A4766B /* PrefixHeader.pch */,
-			);
-			name = Helper;
 			sourceTree = "<group>";
 		};
 		228FA0051E9A34F2005436F2 /* Main */ = {

@@ -23,7 +23,7 @@
 
 @implementation OrderManagementViewController
 
-static NSString *cellName = @"cell";
+static NSString *cellName = @"orderManagementCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];

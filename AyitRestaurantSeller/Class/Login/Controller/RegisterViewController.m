@@ -4,7 +4,8 @@
 //
 //  Created by MAMIAN on 2017/4/10.
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
-//
+
+//  {"success":true,"message":"创建成功","data":{"id":"58e2f6df984c0d5ce0ddf58f","userId":"1001","contact":"宋旭源","merchantName":"开了个店铺","createTime":null,"phone":"18337175639","address":"北京市昌平区龙锦苑东四区","serviceTime":null,"discount":null,"licenseImgs":null,"showImgs":null,"logoImg":null,"open":false}}
 
 #import "RegisterViewController.h"
 

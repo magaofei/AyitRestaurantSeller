@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 
+#import <AFNetworking/AFNetworking.h>
+
 @interface AppDelegate ()
 
 @end
@@ -27,6 +29,9 @@
     
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
+    
+    // 监听网络状态
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     
     return YES;

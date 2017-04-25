@@ -12,6 +12,8 @@
 
 @interface GoodsItem : NSObject
 
+
+
 @property (nonatomic, assign) BOOL success;
 @property (nonatomic, strong) NSString *message;
 

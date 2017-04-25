@@ -11,7 +11,7 @@
 #import <YYModel/YYModel.h>
 #import "GoodsItem.h"
 
-#import <AFNetworking/AFNetworking.h>
+#import "GMNetworking.h"
 
 @interface AyitRestaurantSellerTests : XCTestCase
 
@@ -32,19 +32,45 @@
 }
 
 - (void)testYYModel {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://112.74.217.134:8080/"]];
+    GMNetworking *manager = [GMNetworking sharedManager];
+    NSDictionary *para = [[NSDictionary alloc] init];
+//    para[@"userId"] = @"1001";
     
-    [manager GET:@"http://192.168.31.227:8080/server/merchant/merchant/insert?userId=1001&contact=宋旭源&merchantName=开了个店铺&phone=18337175639&address=北京市昌平区龙锦苑东四区" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//    [para setValue:@"1001" forKey:@"userId"];
+    
+    para = @{
+             @"userId": @"1001" ,
+             @"contact": @"宋旭源",
+             @"merchantName": @"凯乐个店铺",
+             @"phone": @"18337175639",
+             @"address": @"北京市昌平区",
+             };
+    
+    
+//    [para setValue:@"宋旭源" forKey:@"contact"];
+//    [para setValue:@"凯乐个店铺" forKey:@"merchantName"];
+//    [para setValue:@"18337175639" forKey:@"phone"];
+//    [para setValue:@"北京市昌平区" forKey:@"address"];
+    
+    [manager GET:@"/server/merchant/merchant/allMerchants" parameters:para progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         _json = responseObject;
+        
+        GoodsItem *item = [GoodsItem yy_modelWithJSON:_json];
+        
+        //    NSLog(@"%@", _json);
+        NSLog(@"%d", item.success);
+        NSLog(@"%@", item.message);
+        NSLog(@"%@", item.data);
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
     
-    GoodsItem *item = [GoodsItem yy_modelWithJSON:_json];
-//    NSLog(@"%@", _json);
-    NSLog(@"%@", item);
     
-    sleep(100);
+    
+    sleep(1000);
 }
 
 - (void)tearDown {

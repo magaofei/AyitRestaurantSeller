@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface GoodsItemData : NSObject
+@property (nonatomic, strong) NSString *id;
 
 @property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *contact;

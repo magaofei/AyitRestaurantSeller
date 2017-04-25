@@ -34,6 +34,7 @@
 		228FA02B1E9A7E5D005436F2 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA02A1E9A7E5D005436F2 /* TabBarViewController.m */; };
 		228FA02E1E9B1B9C005436F2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA02D1E9B1B9C005436F2 /* RegisterViewController.m */; };
 		228FA0311E9B1BB7005436F2 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA0301E9B1BB7005436F2 /* ForgetPasswordViewController.m */; };
+		22D97C231EAF53F9003B242B /* GMNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D97C221EAF53F9003B242B /* GMNetworking.m */; };
 		7B65E137632B7A1B5685DC02 /* Pods_AyitRestaurantSellerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D19B428F9C7AA7F73F73CC /* Pods_AyitRestaurantSellerUITests.framework */; };
 		EFA68F6F2120972780091E16 /* Pods_AyitRestaurantSellerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0F4E49248B960E5039C433 /* Pods_AyitRestaurantSellerTests.framework */; };
 		F0433DFA85F2B0DCD9086288 /* Pods_AyitRestaurantSeller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A1943AC9B863B047F76697 /* Pods_AyitRestaurantSeller.framework */; };
@@ -110,6 +111,8 @@
 		228FA02D1E9B1B9C005436F2 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Class/Login/Controller/RegisterViewController.m; sourceTree = "<group>"; };
 		228FA02F1E9B1BB7005436F2 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgetPasswordViewController.h; path = Class/Login/Controller/ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		228FA0301E9B1BB7005436F2 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgetPasswordViewController.m; path = Class/Login/Controller/ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		22D97C211EAF53F9003B242B /* GMNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMNetworking.h; path = Helper/Network/GMNetworking.h; sourceTree = "<group>"; };
+		22D97C221EAF53F9003B242B /* GMNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMNetworking.m; path = Helper/Network/GMNetworking.m; sourceTree = "<group>"; };
 		72A1943AC9B863B047F76697 /* Pods_AyitRestaurantSeller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantSeller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0F4E49248B960E5039C433 /* Pods_AyitRestaurantSellerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantSellerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		804F67EFAD5E193CA31F4074 /* Pods-AyitRestaurantSellerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantSellerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantSellerTests/Pods-AyitRestaurantSellerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 		222FC70A1EAB4A5B00DE91EB /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				22D97C211EAF53F9003B242B /* GMNetworking.h */,
+				22D97C221EAF53F9003B242B /* GMNetworking.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -797,6 +802,7 @@
 				228F9FD21E9A3415005436F2 /* main.m in Sources */,
 				223DEAAA1EA39CFD00A4766B /* AddressViewController.m in Sources */,
 				223DEABB1EA4542C00A4766B /* GoodsManagementTableViewCell.m in Sources */,
+				22D97C231EAF53F9003B242B /* GMNetworking.m in Sources */,
 				228FA02E1E9B1B9C005436F2 /* RegisterViewController.m in Sources */,
 				223DEAA71EA318C900A4766B /* GoodsManagementViewController.m in Sources */,
 				228FA02B1E9A7E5D005436F2 /* TabBarViewController.m in Sources */,

@@ -6,12 +6,12 @@
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
 //
 
-#import "GMNetworking.h"
+#import "GMHTTPNetworking.h"
 
-@implementation GMNetworking
+@implementation GMHTTPNetworking
 
 + (instancetype)sharedManager {
-    static GMNetworking *manager = nil;
+    static GMHTTPNetworking *manager = nil;
     static dispatch_once_t pred;
     dispatch_once(&pred, ^{
         manager = [[self alloc] initWithBaseURL:[NSURL URLWithString:@"http://112.74.217.134:8080/"]];

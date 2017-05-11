@@ -8,6 +8,7 @@ target 'AyitRestaurantSeller' do
     pod 'Masonry'
     pod 'YYModel'
     pod 'SDWebImage'
+    pod 'SVProgressHUD'
 
   # Pods for AyitRestaurantSeller
 

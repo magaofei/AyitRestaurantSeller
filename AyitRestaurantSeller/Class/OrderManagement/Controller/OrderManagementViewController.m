@@ -11,6 +11,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Masonry/Masonry.h>
 
+#import "OrderDetailViewController.h"
 @interface OrderManagementViewController () <UISearchBarDelegate,UISearchResultsUpdating>
 
 //@property (nonatomic, strong) UIView *headerView;
@@ -149,12 +150,17 @@ static NSString *cellName = @"orderManagementCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // 取消选择
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    OrderDetailViewController *orderDetailVC = [[OrderDetailViewController alloc] init];
+    orderDetailVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:orderDetailVC animated:YES];
+    
 }
 
 -(void)testCellData:(OrderTableViewCell *)cell {
     cell.nameLabel.text = @"联系人:李俊龙";
     
-    [cell.goodsIcon sd_setImageWithURL:[NSURL URLWithString:@"http://img.spriteapp.cn/ugc/2016/03/10/092924_69853.jpg"]];
+    [cell.goodsIcon sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494432738193&di=a6914591e7ae349f081ac2f6fcd9899b&imgtype=0&src=http%3A%2F%2Fwww.qinzh.com%2Fuploads%2Fallimg%2F141025%2F01321591b_0.jpg"]];
     cell.phoneLabel.text = @"手机号:19603822432";
     cell.goodsTitleLabel.text = @"红烧带鱼+米饭+豆角茄子";
     cell.orderTimeLabel.text = @"2017.04.12 12:30:02";

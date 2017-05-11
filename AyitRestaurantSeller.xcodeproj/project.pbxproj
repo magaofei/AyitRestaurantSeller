@@ -34,7 +34,9 @@
 		228FA02B1E9A7E5D005436F2 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA02A1E9A7E5D005436F2 /* TabBarViewController.m */; };
 		228FA02E1E9B1B9C005436F2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA02D1E9B1B9C005436F2 /* RegisterViewController.m */; };
 		228FA0311E9B1BB7005436F2 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 228FA0301E9B1BB7005436F2 /* ForgetPasswordViewController.m */; };
-		22D97C231EAF53F9003B242B /* GMNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D97C221EAF53F9003B242B /* GMNetworking.m */; };
+		229D622D1EC443AD00598F26 /* OrderDetailHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D622C1EC443AD00598F26 /* OrderDetailHeaderCell.m */; };
+		229D62301EC4688A00598F26 /* OrderDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D622F1EC4688A00598F26 /* OrderDetailBottomView.m */; };
+		22D97C231EAF53F9003B242B /* GMHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D97C221EAF53F9003B242B /* GMHTTPNetworking.m */; };
 		7B65E137632B7A1B5685DC02 /* Pods_AyitRestaurantSellerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D19B428F9C7AA7F73F73CC /* Pods_AyitRestaurantSellerUITests.framework */; };
 		EFA68F6F2120972780091E16 /* Pods_AyitRestaurantSellerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0F4E49248B960E5039C433 /* Pods_AyitRestaurantSellerTests.framework */; };
 		F0433DFA85F2B0DCD9086288 /* Pods_AyitRestaurantSeller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A1943AC9B863B047F76697 /* Pods_AyitRestaurantSeller.framework */; };
@@ -111,8 +113,12 @@
 		228FA02D1E9B1B9C005436F2 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Class/Login/Controller/RegisterViewController.m; sourceTree = "<group>"; };
 		228FA02F1E9B1BB7005436F2 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgetPasswordViewController.h; path = Class/Login/Controller/ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		228FA0301E9B1BB7005436F2 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgetPasswordViewController.m; path = Class/Login/Controller/ForgetPasswordViewController.m; sourceTree = "<group>"; };
-		22D97C211EAF53F9003B242B /* GMNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMNetworking.h; path = Helper/Network/GMNetworking.h; sourceTree = "<group>"; };
-		22D97C221EAF53F9003B242B /* GMNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMNetworking.m; path = Helper/Network/GMNetworking.m; sourceTree = "<group>"; };
+		229D622B1EC443AD00598F26 /* OrderDetailHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderDetailHeaderCell.h; path = Class/GoodsManagement/View/OrderDetailHeaderCell.h; sourceTree = "<group>"; };
+		229D622C1EC443AD00598F26 /* OrderDetailHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetailHeaderCell.m; path = Class/GoodsManagement/View/OrderDetailHeaderCell.m; sourceTree = "<group>"; };
+		229D622E1EC4688A00598F26 /* OrderDetailBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderDetailBottomView.h; path = Class/OrderManagement/OrderDetail/View/OrderDetailBottomView.h; sourceTree = "<group>"; };
+		229D622F1EC4688A00598F26 /* OrderDetailBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetailBottomView.m; path = Class/OrderManagement/OrderDetail/View/OrderDetailBottomView.m; sourceTree = "<group>"; };
+		22D97C211EAF53F9003B242B /* GMHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMHTTPNetworking.h; path = Helper/Network/GMHTTPNetworking.h; sourceTree = "<group>"; };
+		22D97C221EAF53F9003B242B /* GMHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMHTTPNetworking.m; path = Helper/Network/GMHTTPNetworking.m; sourceTree = "<group>"; };
 		72A1943AC9B863B047F76697 /* Pods_AyitRestaurantSeller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantSeller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0F4E49248B960E5039C433 /* Pods_AyitRestaurantSellerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantSellerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		804F67EFAD5E193CA31F4074 /* Pods-AyitRestaurantSellerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantSellerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantSellerTests/Pods-AyitRestaurantSellerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,8 +177,8 @@
 		222FC70A1EAB4A5B00DE91EB /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				22D97C211EAF53F9003B242B /* GMNetworking.h */,
-				22D97C221EAF53F9003B242B /* GMNetworking.m */,
+				22D97C211EAF53F9003B242B /* GMHTTPNetworking.h */,
+				22D97C221EAF53F9003B242B /* GMHTTPNetworking.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -227,6 +233,10 @@
 		223DEAB11EA3A14F00A4766B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				229D622B1EC443AD00598F26 /* OrderDetailHeaderCell.h */,
+				229D622C1EC443AD00598F26 /* OrderDetailHeaderCell.m */,
+				229D622E1EC4688A00598F26 /* OrderDetailBottomView.h */,
+				229D622F1EC4688A00598F26 /* OrderDetailBottomView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -794,15 +804,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				228FA0151E9A372A005436F2 /* AccountItem.m in Sources */,
+				229D62301EC4688A00598F26 /* OrderDetailBottomView.m in Sources */,
 				228FA0271E9A7C36005436F2 /* OrderManagementViewController.m in Sources */,
 				228FA0311E9B1BB7005436F2 /* ForgetPasswordViewController.m in Sources */,
 				227C015C1E9CAC8200E05BF9 /* OrderTableViewCell.m in Sources */,
+				229D622D1EC443AD00598F26 /* OrderDetailHeaderCell.m in Sources */,
 				228F9FD51E9A3415005436F2 /* AppDelegate.m in Sources */,
 				223DEA9F1EA2021200A4766B /* GoodsItemData.m in Sources */,
 				228F9FD21E9A3415005436F2 /* main.m in Sources */,
 				223DEAAA1EA39CFD00A4766B /* AddressViewController.m in Sources */,
 				223DEABB1EA4542C00A4766B /* GoodsManagementTableViewCell.m in Sources */,
-				22D97C231EAF53F9003B242B /* GMNetworking.m in Sources */,
+				22D97C231EAF53F9003B242B /* GMHTTPNetworking.m in Sources */,
 				228FA02E1E9B1B9C005436F2 /* RegisterViewController.m in Sources */,
 				223DEAA71EA318C900A4766B /* GoodsManagementViewController.m in Sources */,
 				228FA02B1E9A7E5D005436F2 /* TabBarViewController.m in Sources */,

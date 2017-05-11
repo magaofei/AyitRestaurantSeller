@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
 
-@interface GMNetworking : AFHTTPSessionManager
+@interface GMHTTPNetworking : AFHTTPSessionManager
 
 + (instancetype)sharedManager;
 

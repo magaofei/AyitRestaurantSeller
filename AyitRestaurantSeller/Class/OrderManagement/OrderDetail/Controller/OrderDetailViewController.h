@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OrderDetailViewController : UIViewController
+@interface OrderDetailViewController : UITableViewController
 
 @property (nonatomic, strong) NSString *ID;
 

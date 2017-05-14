@@ -43,8 +43,8 @@
  */
 - (void)initSubviews {
     OrderDetailBottomView *bottomView = [[OrderDetailBottomView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50)];
-    _cancelOrderButton = bottomView.cancelOrderButton;
-    _acceptOrderButton = bottomView.acceptOrderButton;
+//    _cancelOrderButton = bottomView.cancelOrderButton;
+//    _acceptOrderButton = bottomView.acceptOrderButton;
     
     self.tableView.tableFooterView = bottomView;
     
@@ -104,9 +104,6 @@
         
         return cell;
     }
-    
-    
-    
 }
 
 - (void)testSetupCell:(UITableViewCell *)cell index:(NSIndexPath *)indexPath {

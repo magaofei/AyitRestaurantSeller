@@ -9,8 +9,14 @@
 //  图片上传接口单独, 发布和修改接口单独, 先发布, 再修改并将上传后的图片路径传送
 
 #import "UploadGoodsViewController.h"
+#import "PhotoCollectionViewCell.h"
+#import "UploadGoodsDescriptionCell.h"
 
-@interface UploadGoodsViewController ()
+@interface UploadGoodsViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (nonatomic, strong) UICollectionView *photoCollectionView;
+
+
 
 @end
 
@@ -22,7 +28,37 @@
     self.navigationItem.title = @"上传商品";
     self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
+    
+    
+    [self initSubviews];
+    
 }
+
+- (void)initSubviews {
+    
+    
+    
+    
+    [self initLayoutSubviews];
+}
+
+- (void)initLayoutSubviews {
+    
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

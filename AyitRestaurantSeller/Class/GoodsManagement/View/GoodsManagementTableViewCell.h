@@ -10,4 +10,13 @@
 
 @interface GoodsManagementTableViewCell : UITableViewCell
 
+
+@property (nonatomic, strong) UIImageView *commodityIconImageView;
+
+@property (nonatomic, strong) UILabel *commodityTitleLabel;
+
+@property (nonatomic, strong) UILabel *commodityPriceLabel;
+
+@property (nonatomic, strong) UILabel *commodityStatusLabel;
+
 @end

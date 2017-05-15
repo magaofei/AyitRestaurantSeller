@@ -21,6 +21,8 @@
 @property (nonatomic, strong) UITextField *phoneTextField;
 @property (nonatomic, strong) UITextField *passwordTextField;
 
+@property (nonatomic, strong) UITextField *secondPasswordTextField;
+
 @property (nonatomic, strong) UIButton *authCodeButton;
 @property (nonatomic, strong) UITextField *authCodeTextField;
 
@@ -46,20 +48,18 @@
 - (void)initSubviews {
     
     _phoneTextField = [[UITextField alloc] init];
-    _phoneTextField.placeholder = @"手机号";
+    _phoneTextField.placeholder = @"请输入手机号";
     _phoneTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _phoneTextField.keyboardType = UIKeyboardTypePhonePad;
 #pragma makr - todo 校验输入框
     [self.view addSubview:_phoneTextField];
     
-    _passwordTextField = [[UITextField alloc] init];
-    _passwordTextField.placeholder = @"密码";
-    _passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
-    [self.view addSubview:_passwordTextField];
+
     
     _authCodeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    _authCodeButton.titleLabel.font = [UIFont systemFontOfSize:18];
+    _authCodeButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [_authCodeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_authCodeButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 171.0/255.0 blue: 10.0/255.0 alpha: 1.0]];
+    [_authCodeButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 120.0/255.0 blue: 102.0/255.0 alpha: 1.0]];
     
     [_authCodeButton setTitle:@"发送验证码" forState:UIControlStateNormal];
     
@@ -74,8 +74,18 @@
     
     [self.view addSubview:_authCodeTextField];
     
+    _passwordTextField = [[UITextField alloc] init];
+    _passwordTextField.placeholder = @"请输入密码";
+    _passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:_passwordTextField];
+    
+    _secondPasswordTextField = [[UITextField alloc] init];
+    _secondPasswordTextField.placeholder = @"请再输入一次密码";
+    _secondPasswordTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:_secondPasswordTextField];
+    
     _registerButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    _registerButton.backgroundColor = [UIColor grayColor];
+    _registerButton.backgroundColor = [UIColor colorWithRed: 255.0/255.0 green: 120.0/255.0 blue: 102.0/255.0 alpha: 1.0];
     [_registerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 //    [_registerButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 171.0/255.0 blue: 10.0/255.0 alpha: 1.0]];
     
@@ -95,9 +105,9 @@
 - (void)initLayoutSubviews {
     
     [_phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(120);
+        make.top.equalTo(self.mas_topLayoutGuide).offset(70);
         make.centerX.equalTo(self.view.mas_centerX);
-        make.width.equalTo(self.view.mas_width).multipliedBy(0.7);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.6);
     }];
     
     
@@ -110,19 +120,25 @@
     [_authCodeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_authCodeButton.mas_bottom).offset(40);
         make.centerX.equalTo(self.view.mas_centerX);
-        make.width.equalTo(self.view.mas_width).multipliedBy(0.7);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.6);
     }];
     
     [_passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_authCodeTextField.mas_bottom).offset(15);
+        make.top.equalTo(_authCodeTextField.mas_bottom).offset(30);
         make.centerX.equalTo(self.view.mas_centerX);
-        make.width.equalTo(self.view.mas_width).multipliedBy(0.7);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.6);
+    }];
+    
+    [_secondPasswordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_passwordTextField.mas_bottom).offset(15);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.6);
     }];
     
     [_registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_passwordTextField.mas_bottom).offset(70);
+        make.top.equalTo(_secondPasswordTextField.mas_bottom).offset(70);
         make.centerX.equalTo(self.view.mas_centerX);
-        make.width.equalTo(_passwordTextField.mas_width).multipliedBy(0.5);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.7);
     }];
 }
 
@@ -186,6 +202,8 @@
     }];
     
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {

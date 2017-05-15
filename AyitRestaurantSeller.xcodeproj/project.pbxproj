@@ -37,9 +37,6 @@
 		229D622D1EC443AD00598F26 /* OrderDetailHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D622C1EC443AD00598F26 /* OrderDetailHeaderCell.m */; };
 		229D62301EC4688A00598F26 /* OrderDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 229D622F1EC4688A00598F26 /* OrderDetailBottomView.m */; };
 		22D97C231EAF53F9003B242B /* GMHTTPNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D97C221EAF53F9003B242B /* GMHTTPNetworking.m */; };
-		22F045681EC5D75C0019A78D /* UploadGoodsTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F045671EC5D75C0019A78D /* UploadGoodsTitleCell.m */; };
-		22F0456B1EC5DA620019A78D /* UploadGoodsDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0456A1EC5DA620019A78D /* UploadGoodsDescriptionCell.m */; };
-		22F0456E1EC5DE350019A78D /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0456D1EC5DE350019A78D /* PhotoCollectionViewCell.m */; };
 		7B65E137632B7A1B5685DC02 /* Pods_AyitRestaurantSellerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D19B428F9C7AA7F73F73CC /* Pods_AyitRestaurantSellerUITests.framework */; };
 		EFA68F6F2120972780091E16 /* Pods_AyitRestaurantSellerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0F4E49248B960E5039C433 /* Pods_AyitRestaurantSellerTests.framework */; };
 		F0433DFA85F2B0DCD9086288 /* Pods_AyitRestaurantSeller.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A1943AC9B863B047F76697 /* Pods_AyitRestaurantSeller.framework */; };
@@ -122,12 +119,6 @@
 		229D622F1EC4688A00598F26 /* OrderDetailBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderDetailBottomView.m; path = Class/OrderManagement/OrderDetail/View/OrderDetailBottomView.m; sourceTree = "<group>"; };
 		22D97C211EAF53F9003B242B /* GMHTTPNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMHTTPNetworking.h; path = Helper/Network/GMHTTPNetworking.h; sourceTree = "<group>"; };
 		22D97C221EAF53F9003B242B /* GMHTTPNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMHTTPNetworking.m; path = Helper/Network/GMHTTPNetworking.m; sourceTree = "<group>"; };
-		22F045661EC5D75C0019A78D /* UploadGoodsTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadGoodsTitleCell.h; path = Class/UploadGoods/View/UploadGoodsTitleCell.h; sourceTree = "<group>"; };
-		22F045671EC5D75C0019A78D /* UploadGoodsTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadGoodsTitleCell.m; path = Class/UploadGoods/View/UploadGoodsTitleCell.m; sourceTree = "<group>"; };
-		22F045691EC5DA620019A78D /* UploadGoodsDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UploadGoodsDescriptionCell.h; path = Class/UploadGoods/View/UploadGoodsDescriptionCell.h; sourceTree = "<group>"; };
-		22F0456A1EC5DA620019A78D /* UploadGoodsDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UploadGoodsDescriptionCell.m; path = Class/UploadGoods/View/UploadGoodsDescriptionCell.m; sourceTree = "<group>"; };
-		22F0456C1EC5DE350019A78D /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoCollectionViewCell.h; path = Class/UploadGoods/View/PhotoCollectionViewCell.h; sourceTree = "<group>"; };
-		22F0456D1EC5DE350019A78D /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoCollectionViewCell.m; path = Class/UploadGoods/View/PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		72A1943AC9B863B047F76697 /* Pods_AyitRestaurantSeller.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantSeller.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0F4E49248B960E5039C433 /* Pods_AyitRestaurantSellerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AyitRestaurantSellerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		804F67EFAD5E193CA31F4074 /* Pods-AyitRestaurantSellerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantSellerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantSellerTests/Pods-AyitRestaurantSellerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -500,12 +491,6 @@
 			isa = PBXGroup;
 			children = (
 				223DEAB71EA3A44B00A4766B /* UploadGoodsDemo.xib */,
-				22F045661EC5D75C0019A78D /* UploadGoodsTitleCell.h */,
-				22F045671EC5D75C0019A78D /* UploadGoodsTitleCell.m */,
-				22F045691EC5DA620019A78D /* UploadGoodsDescriptionCell.h */,
-				22F0456A1EC5DA620019A78D /* UploadGoodsDescriptionCell.m */,
-				22F0456C1EC5DE350019A78D /* PhotoCollectionViewCell.h */,
-				22F0456D1EC5DE350019A78D /* PhotoCollectionViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -822,13 +807,11 @@
 				229D62301EC4688A00598F26 /* OrderDetailBottomView.m in Sources */,
 				228FA0271E9A7C36005436F2 /* OrderManagementViewController.m in Sources */,
 				228FA0311E9B1BB7005436F2 /* ForgetPasswordViewController.m in Sources */,
-				22F0456B1EC5DA620019A78D /* UploadGoodsDescriptionCell.m in Sources */,
 				227C015C1E9CAC8200E05BF9 /* OrderTableViewCell.m in Sources */,
 				229D622D1EC443AD00598F26 /* OrderDetailHeaderCell.m in Sources */,
 				228F9FD51E9A3415005436F2 /* AppDelegate.m in Sources */,
 				223DEA9F1EA2021200A4766B /* GoodsItemData.m in Sources */,
 				228F9FD21E9A3415005436F2 /* main.m in Sources */,
-				22F045681EC5D75C0019A78D /* UploadGoodsTitleCell.m in Sources */,
 				223DEAAA1EA39CFD00A4766B /* AddressViewController.m in Sources */,
 				223DEABB1EA4542C00A4766B /* GoodsManagementTableViewCell.m in Sources */,
 				22D97C231EAF53F9003B242B /* GMHTTPNetworking.m in Sources */,
@@ -841,7 +824,6 @@
 				228FA0241E9A7C12005436F2 /* UploadGoodsViewController.m in Sources */,
 				228FA0101E9A3651005436F2 /* LoginViewController.m in Sources */,
 				223DEAAD1EA39D1B00A4766B /* ContactInformationViewController.m in Sources */,
-				22F0456E1EC5DE350019A78D /* PhotoCollectionViewCell.m in Sources */,
 				223DEA9C1EA1FFFD00A4766B /* GoodsItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

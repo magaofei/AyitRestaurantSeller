@@ -10,10 +10,10 @@
 
 @interface OrderDetailBottomView : UIView
 
-//@property (nonatomic, strong) UIButton *cancelOrderButton;
-//
-//@property (nonatomic, strong) UIButton *acceptOrderButton;
+@property (nonatomic, strong) UIButton *cancelOrderButton;
 
-@property (nonatomic, strong) UIButton *contactMerchantButton;
+@property (nonatomic, strong) UIButton *acceptOrderButton;
+
+//@property (nonatomic, strong) UIButton *contactMerchantButton;
 
 @end

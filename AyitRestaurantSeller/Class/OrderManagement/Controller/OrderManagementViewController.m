@@ -164,7 +164,7 @@ static NSString *cellName = @"orderManagementCell";
     cell.phoneLabel.text = @"手机号:19603822432";
     cell.goodsTitleLabel.text = @"红烧带鱼+米饭+豆角茄子";
     cell.orderTimeLabel.text = @"2017.04.12 12:30:02";
-    cell.goodsPriceLabel.text = @"$216.50";
+    cell.goodsPriceLabel.text = @"¥21.50";
     cell.orderStatusLabel.text = @"状态:已接受";
     
 }

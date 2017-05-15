@@ -59,13 +59,14 @@
     
     // 订单时间
     _orderTimeLabel = [[UILabel alloc] init];
-    _orderTimeLabel.font = [UIFont systemFontOfSize:12];
+    _orderTimeLabel.font = [UIFont systemFontOfSize:13];
     _orderTimeLabel.textColor = [UIColor darkGrayColor];
     [self addSubview:_orderTimeLabel];
     
     // 价格
     _goodsPriceLabel = [[UILabel alloc] init];
     _goodsPriceLabel.font = [UIFont boldSystemFontOfSize:16];
+    _goodsPriceLabel.textColor = [UIColor colorWithRed: 255.0/255.0 green: 0.0/255.0 blue: 0.0/255.0 alpha: 1.0];
     [self addSubview:_goodsPriceLabel];
     
     // 订单状态
@@ -107,7 +108,7 @@
     
     // 订单时间
     [_orderTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_goodsTitleLabel.mas_bottom).offset(5);
+        make.centerY.equalTo(_goodsIcon.mas_centerY);
         make.left.equalTo(_goodsTitleLabel.mas_left);
     }];
     

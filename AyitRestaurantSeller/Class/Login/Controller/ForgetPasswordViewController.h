@@ -10,4 +10,6 @@
 
 @interface ForgetPasswordViewController : UIViewController
 
+@property (nonatomic, strong) UITextField *phoneTextField;
+
 @end

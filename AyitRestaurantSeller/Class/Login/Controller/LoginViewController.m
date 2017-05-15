@@ -25,6 +25,8 @@
 #import <Masonry/Masonry.h>
 #import "GMHTTPNetworking.h"
 
+
+
 @interface LoginViewController ()
 
 @property (nonatomic, strong) UITextField *accountTextField;
@@ -51,8 +53,10 @@
  */
 @property (nonatomic, strong) UIButton *forgetPasswordBtn;
 
-@property (nonatomic, copy) NSString *account;
-@property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy)   NSString *account;
+@property (nonatomic, copy)   NSString *password;
+
+@property (nonatomic, strong) UILabel                 *ayitLabel;
 
 @end
 
@@ -80,13 +84,7 @@
 - (void)initSubviews {
     // 帐号  密码 框
     // 登录按钮
-    
     [self initWidget];
- 
-    
-    
-    
-    
     _tipLabel.hidden = YES;
     _tipImageView.hidden = YES;
     //默认隐藏
@@ -105,12 +103,14 @@
     [_loginButton setTitle:@"登 录" forState:UIControlStateNormal];
     [self.view addSubview:_loginButton];
     [_loginButton addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    
     _loginInfoView = [[UIView alloc] init];
     [self.view addSubview:_loginInfoView];
     
+    // logo文字
+    _ayitLabel = [[UILabel alloc] init];
+    _ayitLabel.text = @"安阳工学院食堂网络点餐商户版";
+    _ayitLabel.font = [UIFont systemFontOfSize:19];
+    [self.view addSubview:_ayitLabel];
     
     // 帐号Label
     _accountLabel = [[UILabel alloc] init];
@@ -151,8 +151,8 @@
     
     // Logo
     _iconLogoView = [[UIImageView alloc] init];
-#pragma mark - TODO: logo
-    _iconLogoView.image = nil;
+    
+    _iconLogoView.image = [UIImage imageNamed:@"ayit-logo"];
     [self.view addSubview:_iconLogoView];
     
     _loadingIndicatorView = [[UIActivityIndicatorView alloc] init];
@@ -161,7 +161,7 @@
     // 注册
     _registerBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [_registerBtn setTitle:@"注册" forState:UIControlStateNormal];
-//    _registerBtn.titleLabel.text = @"注册";
+    //    _registerBtn.titleLabel.text = @"注册";
     [_registerBtn addTarget:self action:@selector(clickRegisterBtn) forControlEvents:UIControlEventTouchUpInside];
     
     
@@ -171,11 +171,21 @@
     
     // 忘记密码
     _forgetPasswordBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _forgetPasswordBtn.titleLabel.text = @"忘记密码？";
+    //    _forgetPasswordBtn.titleLabel.text = @"忘记密码？";
     [_forgetPasswordBtn setTitle:@"忘记密码?" forState:UIControlStateNormal];
     [_forgetPasswordBtn addTarget:self action:@selector(clickForgetPasswordBtn) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:_forgetPasswordBtn];
+    
+    
+    // 左上角关闭按钮
+    //    _popButton = [UIBarButtonItem buttonWithType:UIButtonTypeSystem];
+    //    [_popButton setTitle:@"关闭" forState:UIControlStateNormal];
+    //    [_popButton addTarget:self action:@selector(clickPopButton) forControlEvents:UIControlEventTouchUpInside];
+//    _popButton = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(clickPopButton)];
+//    
+//    
+//    self.navigationItem.leftBarButtonItem = _popButton;
     
     
     
@@ -184,12 +194,19 @@
 
 
 /**
+ 返回上个控制器
+ */
+- (void)clickPopButton {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+/**
  点击注册按钮，跳转注册控制器
  */
 - (void)clickRegisterBtn {
     RegisterViewController *regVC = [[RegisterViewController alloc] init];
     [self.navigationController pushViewController:regVC animated:YES];
-//    [self.navigationController presentViewController:regVC animated:YES completion:nil];
+    //    [self.navigationController presentViewController:regVC animated:YES completion:nil];
 }
 
 
@@ -199,12 +216,18 @@
 - (void) clickForgetPasswordBtn {
     ForgetPasswordViewController *forgetVC = [[ForgetPasswordViewController alloc] init];
     [self.navigationController pushViewController:forgetVC animated:YES];
-//    [self.navigationController presentViewController:forgetVC animated:YES completion:nil];
+    //    [self.navigationController presentViewController:forgetVC animated:YES completion:nil];
     
     
 }
 
 - (void)layoutWidget {
+    
+    [_ayitLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.topMargin.equalTo(self.mas_topLayoutGuide).offset(44);
+    }];
+    
     // Logo
     [_iconLogoView mas_makeConstraints:^(MASConstraintMaker *make) {
         // 高度宽度
@@ -212,9 +235,11 @@
         // 距离顶部35点
         make.width.height.equalTo(@94);
         make.centerX.equalTo(self.view);
-        make.topMargin.equalTo(self.view).offset(35+44+20);
+        make.topMargin.equalTo(_ayitLabel.mas_bottom).offset(30);
         
     }];
+    
+    
     
     // 帐号密码View
     [_loginInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -228,7 +253,7 @@
     [_accountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_loginInfoView.mas_left);
         make.top.equalTo(_loginInfoView.mas_top);
-//        make.right.equalTo(_accountTextField.mas_left).offset(-10);
+        //        make.right.equalTo(_accountTextField.mas_left).offset(-10);
     }];
     
     // 帐号TextField
@@ -237,7 +262,7 @@
         make.top.equalTo(_loginInfoView.mas_top);
         make.right.equalTo(_loginInfoView.mas_right).offset(-10);
         make.left.equalTo(_accountLabel.mas_right).offset(20);
-//        make.centerY.equalTo(_accountLabel.mas_centerY);
+        //        make.centerY.equalTo(_accountLabel.mas_centerY);
         
     }];
     
@@ -254,10 +279,10 @@
         make.bottom.equalTo(_loginInfoView.mas_bottom);
         make.right.equalTo(_loginInfoView.mas_right).offset(-10);
         make.left.equalTo(_passwordLabel.mas_right).offset(20);
-//        make.centerY.equalTo(_passwordLabel.mas_centerY);
+        //        make.centerY.equalTo(_passwordLabel.mas_centerY);
     }];
     
-   
+    
     
     
     // 密码TextField
@@ -268,7 +293,7 @@
         make.right.equalTo(self.view.mas_right).offset(-30);
         make.top.equalTo(_loginInfoView.mas_bottom).offset(90);
         make.height.equalTo(@36);
-//        make.centerX
+        //        make.centerX
     }];
     
     // 登录框的菊花圈
@@ -305,7 +330,7 @@
     
     
     
-
+    
 }
 
 //当登陆按钮被按下
@@ -377,7 +402,7 @@
     //        _tipImageView.hidden = NO;
     //        _tipLabel.hidden = NO;
     //        [_tipLabel setText:errorTip];
-    //        
+    //
     //    }
     
     return result;
@@ -423,7 +448,7 @@
     TabBarViewController *tabBarVC = [[TabBarViewController alloc] init];
     
     [UIApplication sharedApplication].keyWindow.rootViewController = tabBarVC;
-
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -442,8 +467,7 @@
 
 - (void)setPassword:(NSString *)password {
     _password = _passwordTextField.text;
-}
-/*
+}/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

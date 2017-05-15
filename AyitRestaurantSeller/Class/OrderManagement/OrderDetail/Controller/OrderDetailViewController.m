@@ -16,13 +16,9 @@
 
 @interface OrderDetailViewController ()
 
-
-
 @property (nonatomic, strong) UIButton *cancelOrderButton;
 
 @property (nonatomic, strong) UIButton *acceptOrderButton;
-
-
 
 @end
 
@@ -30,25 +26,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
     // 获取数据
-    
     [self initSubviews];
 }
-
-
 /**
  子View
  */
 - (void)initSubviews {
     OrderDetailBottomView *bottomView = [[OrderDetailBottomView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50)];
+    
     _cancelOrderButton = bottomView.cancelOrderButton;
     _acceptOrderButton = bottomView.acceptOrderButton;
     
     self.tableView.tableFooterView = bottomView;
-    
-    
     [self initLayoutSubviews];
 }
 
@@ -57,7 +47,6 @@
 }
 
 #pragma mark - tableView
-
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;
 }
@@ -104,9 +93,6 @@
         
         return cell;
     }
-    
-    
-    
 }
 
 - (void)testSetupCell:(UITableViewCell *)cell index:(NSIndexPath *)indexPath {

@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) UIButton *acceptOrderButton;
 
+//@property (nonatomic, strong) UIButton *contactMerchantButton;
+
 @end

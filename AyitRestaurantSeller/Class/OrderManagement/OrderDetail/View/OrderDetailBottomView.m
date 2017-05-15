@@ -42,6 +42,12 @@
     [_acceptOrderButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_acceptOrderButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 171.0/255.0 blue: 10.0/255.0 alpha: 1.0]];
     
+//    _contactMerchantButton = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [self addSubview:_contactMerchantButton];
+//    [_contactMerchantButton setTitle:@"联系商家" forState:UIControlStateNormal];
+//    [_contactMerchantButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [_contactMerchantButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 171.0/255.0 blue: 10.0/255.0 alpha: 1.0]];
+    
     
     
     [self initLayoutSubviews];
@@ -62,6 +68,13 @@
         make.bottom.equalTo(self.mas_bottom).offset(-5);
         make.width.equalTo(self.mas_width).multipliedBy(0.4);
     }];
+    
+//    [_contactMerchantButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self).offset(5);
+//        make.centerX.equalTo(self.mas_centerX);
+//        make.bottom.equalTo(self.mas_bottom).offset(-5);
+//        make.width.equalTo(self.mas_width).multipliedBy(0.9);
+//    }];
     
 }
 

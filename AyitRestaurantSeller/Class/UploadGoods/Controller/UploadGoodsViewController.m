@@ -12,14 +12,20 @@
 #import "UploadGoodsViewController.h"
 
 #import <Masonry/Masonry.h>
+#import <Photos/Photos.h>
 
-@interface UploadGoodsViewController () <UITextViewDelegate, UIScrollViewDelegate>
+#import <TZImagePickerController/TZImagePickerController.h>
+
+
+@interface UploadGoodsViewController () <UITextViewDelegate, UIScrollViewDelegate, TZImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 @property (nonatomic, strong) UITextField *inputTitleTextField;
 
 @property (nonatomic, strong) UITextView *descriptionTextView;
+
+//@property (nonatomic, strong) UIImagePickerController *imagePicker;
 
 
 /**
@@ -90,6 +96,7 @@
     _uploadPhotoButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [_uploadPhotoButton setBackgroundColor:[UIColor colorWithRed: 230.0/255.0 green: 230.0/255.0 blue: 230.0/255.0 alpha: 1.0]];
     [_uploadPhotoButton setTitleColor:[UIColor colorWithRed: 127.0/255.0 green: 127.0/255.0 blue: 127.0/255.0 alpha: 1.0] forState:UIControlStateNormal];
+    [_uploadPhotoButton addTarget:self action:@selector(albumAction) forControlEvents:UIControlEventTouchUpInside];
     
     
     
@@ -145,6 +152,108 @@
         make.right.equalTo(_scrollView.mas_right).offset(-15);
     }];
     
+}
+
+
+/**
+ 调起相册
+ */
+- (void)albumAction {
+    //UIImagePickerController 属于UIKit
+//    _imagePicker = [[UIImagePickerController alloc] init];
+//    
+//    // 若设备支持相机，使用拍照功能；否则从照片库中选择
+////    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+////        
+////        _imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+////    } else {
+////        
+////        _imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+////    }
+//    
+//    _imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+//    
+//    _imagePicker.delegate = self; //设置委托，
+//    
+//    _imagePicker.allowsEditing = YES;//允许拍照完对照片进行裁剪
+//    
+////    [self presentViewController:_imagePicker animated:YES completion:nil];
+//    
+//    //获得所有智能相册
+//    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+//    //列出所有智能相册，此时smartAlbums保存是各个智能相册对应的PHAssetCollection
+////    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+//    PHAsset *asset = [[PHAsset alloc] init];
+//    for (NSInteger i = 0; i < smartAlbums.count; i ++) {
+//        //从中获取一相册
+//        PHCollection *collection = smartAlbums[i];
+//        if ([collection isKindOfClass:[PHAssetCollection class]]) {
+//            //判断是否是PHAssetCollection类
+//            PHAssetCollection *assetCollection = (PHAssetCollection *)collection;
+//            //从每个智能相册中获取资源集合,可以看做是PHAsset的集合
+//            PHFetchResult *photoSet = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
+//            for (NSInteger j = 0; j < photoSet.count - 1; i++) {
+//                //获取其中一个资源
+//                asset = photoSet[i];
+//            }
+//        }else{
+//            NSLog(@"not PHAssetCollection");
+//        }
+//    }
+//    
+//    
+//    PHImageManager *imageManager = [[PHImageManager alloc]init];
+//    //获取第一张照片资源
+////    PHAsset *asset = asset[0];
+//    
+//    
+//    //设定显示照片的尺寸
+//    
+//    
+//    [imageManager requestImageForAsset:asset
+//                            targetSize:self.uploadPhotoButton.frame.size
+//                           contentMode:PHImageContentModeAspectFill
+//                               options:nil
+//                         resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//                             //显示照片
+//                             self.uploadPhotoButton.imageView.image = result;
+//                         }];
+    
+    
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
+    
+    // You can get the photos by block, the same as by delegate.
+    // 你可以通过block或者代理，来得到用户选择的照片.
+//    [imagePickerVc setDidFinishPickingVideoHandle:^{
+//        
+//    }];
+//    imagePickerVc setDidFinishPickingPhotosHandle:^{
+    
+//}
+    
+    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+        
+//        self.uploadPhotoButton.imageView.image = photos.firstObject;
+        
+        [self.uploadPhotoButton setImage:photos.firstObject forState:UIControlStateNormal];
+        
+    }];
+    
+    
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
+}
+
+
+// 代理方法
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    //成功获取照片
+    NSLog(@"%s", __func__);
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    //获取照片失败
+    NSLog(@"%s", __func__);
 }
 
 

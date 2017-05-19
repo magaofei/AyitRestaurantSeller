@@ -10,6 +10,8 @@ target 'AyitRestaurantSeller' do
     pod 'SDWebImage'
     pod 'SVProgressHUD'
     pod 'MJRefresh'
+    
+    pod 'TZImagePickerController'
 
   # Pods for AyitRestaurantSeller
 

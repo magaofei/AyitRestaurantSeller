@@ -20,6 +20,7 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SVProgressHUD (2.1.2)
+  - TZImagePickerController (1.7.8)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - MJRefresh
   - SDWebImage
   - SVProgressHUD
+  - TZImagePickerController
   - YYModel
 
 SPEC CHECKSUMS:
@@ -36,8 +38,9 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  TZImagePickerController: 87a138ae5d585225aaa6c8abe2cface0f0ad19dd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 41af0d06e80d2782431ecec05901795d6527f8f0
+PODFILE CHECKSUM: 0a2d090785538781242adfc37a4d015f64bd33e1
 
 COCOAPODS: 1.2.0

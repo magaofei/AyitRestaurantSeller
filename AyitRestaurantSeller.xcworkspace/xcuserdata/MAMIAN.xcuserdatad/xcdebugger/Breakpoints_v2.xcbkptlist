@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AyitRestaurantSellerTests/AyitRestaurantSellerTests.m"
-            timestampString = "514806433.73979"
+            timestampString = "516795645.851573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "-testYYModel"
             landmarkType = "7">
          </BreakpointContent>
@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AyitRestaurantSellerTests/AyitRestaurantSellerTests.m"
-            timestampString = "514806262.632194"
+            timestampString = "516795645.851573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "-testYYModel"
             landmarkType = "7">
          </BreakpointContent>

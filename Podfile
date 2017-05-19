@@ -9,6 +9,7 @@ target 'AyitRestaurantSeller' do
     pod 'YYModel'
     pod 'SDWebImage'
     pod 'SVProgressHUD'
+    pod 'MJRefresh'
 
   # Pods for AyitRestaurantSeller
 

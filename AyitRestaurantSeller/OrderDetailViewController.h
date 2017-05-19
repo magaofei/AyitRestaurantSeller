@@ -9,16 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "OrderItem.h"
 
-
-
-
 @interface OrderDetailViewController : UITableViewController
 
-
-@property (nonatomic,copy) void (^change)(NSString* stringName);//block 写法1
-
 @property (nonatomic, strong) OrderItem *orderItem;
-
-
 
 @end

@@ -10,6 +10,11 @@
 #import "OrderTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <Masonry/Masonry.h>
+#import "GMMerchantItem.h"
+#import "OrderItem.h"
+#import <MJRefresh/MJRefresh.h>
+#import "GMCommodityItem.h"
+#import "GMClientItem.h"
 
 #import "OrderDetailViewController.h"
 @interface OrderManagementViewController () <UISearchBarDelegate,UISearchResultsUpdating>
@@ -20,9 +25,13 @@
 
 //@property (nonatomic, strong) UITableView *infoTableView;
 
+@property (nonatomic, strong) NSMutableArray *orderItems;
+
 @end
 
 @implementation OrderManagementViewController
+
+
 
 static NSString *cellName = @"orderManagementCell";
 
@@ -34,9 +43,21 @@ static NSString *cellName = @"orderManagementCell";
     self.navigationItem.title = @"订单管理";
     
     [self initSubviews];
+    
+    
+    [self.tableView.mj_header beginRefreshing];
+    
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orderStateUpdateAction:) name:@"orderItemUpdate" object:nil];
+    
 }
 
-
+//- (void)orderStateUpdateAction:(NSNotification *)note {
+//    for (OrderItem *orderItem in self.orderItems) {
+//        orderItem.orderState = note.object[@"orderState"];
+//    }
+//    [self.tableView reloadData];
+//}
 
 /**
  初始化子视图
@@ -62,10 +83,34 @@ static NSString *cellName = @"orderManagementCell";
     self.orderSearchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.orderSearchController.searchBar.delegate = self;
     self.orderSearchController.searchResultsUpdater = self;
-    self.tableView.tableHeaderView = self.orderSearchController.searchBar;
     
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        OrderItem *item = [[OrderItem alloc] init];
+        item.merchantItem.logoImg = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494480859592&di=0aa9752d65bb0d0a21922333a5615ac5&imgtype=0&src=http%3A%2F%2Fpic.syd.com.cn%2F0%2F101%2F21%2F05%2F101210514_000000003dc9cb4c.jpg";
+        //    cell.phoneLabel.text = @"手机号:19603822432";
+        GMCommodityItem *disanxian = [[GMCommodityItem alloc] init];
+        disanxian.commodityName = @"地三鲜盖饭";
+        disanxian.commodityQuantity = 2;
+        
+        [item.commodityItems addObject:disanxian];
+        item.createTime = @"2017.04.12 12:30:02";
+        item.orderTotalPrice = 21;
+        item.orderState = @"状态:等待商家接受";
+        
+        GMClientItem *clientItem = [[GMClientItem alloc] init];
+        clientItem.nickName = @"李俊龙";
+        clientItem.phone = @"18603822757";
+        item.clientItem = clientItem;
+        
+        
+        [self.orderItems addObject:item];
+        
+        [self.tableView reloadData];
+        
+        [self.tableView.mj_header endRefreshing];
+    }];
     
-    
+//    self.tableView.tableHeaderView = self.orderSearchController.searchBar;
     
     [self layoutSubviews];
     
@@ -110,7 +155,7 @@ static NSString *cellName = @"orderManagementCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.orderItems.count;
 }
 
 
@@ -121,14 +166,39 @@ static NSString *cellName = @"orderManagementCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     OrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
+    
     if (!cell) {
         cell = [[OrderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
         
     }
     
-    [self testCellData:cell];
     
     // cell setup
+    OrderItem *item = self.orderItems[indexPath.row];
+    
+    [cell.goodsIcon sd_setImageWithURL:[NSURL URLWithString:item.merchantItem.logoImg] placeholderImage:[UIImage imageNamed:@"maocai"]];
+    // 遍历订单下的所有商品, 拼接名称
+    NSMutableString *commodityName = [NSMutableString string];
+    for (GMCommodityItem *commodityItem in item.commodityItems) {
+        [commodityName appendFormat:@"%@+", commodityItem.commodityName];
+    }
+    
+    if (commodityName.length > 0) {
+        // 去掉最后一个字符
+        [commodityName deleteCharactersInRange:NSMakeRange(commodityName.length - 1, 1)];
+    }
+    
+    // cell Setup
+    cell.nameLabel.text = item.clientItem.nickName;
+    cell.phoneLabel.text = item.clientItem.phone;
+    cell.goodsTitleLabel.text = commodityName;
+    cell.orderTimeLabel.text = item.createTime;
+    cell.goodsPriceLabel.text = [NSString stringWithFormat:@"%ld", (long)item.orderTotalPrice];
+    cell.orderStatusLabel.text = item.orderState;
+    
+//    [self testCellData:cell];
+    
+    
     
     
     return cell;
@@ -151,9 +221,35 @@ static NSString *cellName = @"orderManagementCell";
     // 取消选择
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    
+    
     OrderDetailViewController *orderDetailVC = [[OrderDetailViewController alloc] init];
+    
+    OrderItem *orderItem = self.orderItems[indexPath.row];
+    orderDetailVC.orderItem = orderItem;
     orderDetailVC.hidesBottomBarWhenPushed = YES;
+    
+    orderDetailVC.change=^(NSString* stringName){
+        orderItem.orderState = stringName;
+        
+//        [self.orderItems removeAllObjects];
+//        [self.orderItems addObject:orderItem];
+        [self.tableView reloadData];
+        
+    };
+    
+    
+//    orderItem.orderState = @"状态:商家已接受";
+//    for (OrderItem *item in self.orderItems) {
+//        item.orderState = @"状态:商家已接受";
+//        
+//    }
+    
+    
+    
     [self.navigationController pushViewController:orderDetailVC animated:YES];
+    
+
     
 }
 
@@ -168,6 +264,18 @@ static NSString *cellName = @"orderManagementCell";
     cell.orderStatusLabel.text = @"状态:已接受";
     
 }
+
+- (NSMutableArray *)orderItems {
+    if (!_orderItems) {
+        _orderItems = [NSMutableArray array];
+        
+    }
+    return _orderItems;
+}
+
+//- (void)dealloc {
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"orderItemUpdate" object:nil];
+//}
 
 
 /*

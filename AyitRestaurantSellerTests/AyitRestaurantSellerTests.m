@@ -11,7 +11,7 @@
 #import <YYModel/YYModel.h>
 #import "GoodsItem.h"
 
-#import "GMNetworking.h"
+#import "GMHTTPNetworking.h"
 
 @interface AyitRestaurantSellerTests : XCTestCase
 
@@ -31,9 +31,20 @@
     
 }
 
+- (void)testGetAllMerchant {
+    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+    NSDictionary *p = @{};
+    
+    [manager POST:@"" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
+
 - (void)testYYModel {
 //    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://112.74.217.134:8080/"]];
-    GMNetworking *manager = [GMNetworking sharedManager];
+    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
     NSDictionary *para = [[NSDictionary alloc] init];
 //    para[@"userId"] = @"1001";
     

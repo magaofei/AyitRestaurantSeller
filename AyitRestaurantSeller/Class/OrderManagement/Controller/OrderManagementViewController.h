@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class OrderItem;
 
 @interface OrderManagementViewController : UITableViewController
+
+//typedef void(^OrderItemAcceptBlock)(OrderItem *);
+
+//@property (nonatomic, copy) OrderItemAcceptBlock orderItemAcceptUpdateValue;
 
 @end

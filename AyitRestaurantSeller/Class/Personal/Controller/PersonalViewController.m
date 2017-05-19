@@ -9,11 +9,13 @@
 #import "PersonalViewController.h"
 
 #import <Masonry/Masonry.h>
-
+#import "LoginViewController.h"
 
 @interface PersonalViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *infoTableView;
+
+@property (nonatomic, strong) UIButton *exitButton;
 
 // 列表信息
 @property (nonatomic, copy) NSArray *listArr;
@@ -30,7 +32,7 @@ static NSString *infoCell = @"infoCell";
     self.navigationItem.title = @"信息管理";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.listArr = @[@"联系方式", @"地址", @"退出"];
+    self.listArr = @[@"联系方式", @"地址"];
     
     [self initSubviews];
     
@@ -55,6 +57,29 @@ static NSString *infoCell = @"infoCell";
     
     self.infoTableView.rowHeight = 50;
     
+    _exitButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_exitButton setTitle:@"退出" forState:UIControlStateNormal];
+    [_exitButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 0.0/255.0 blue: 0.0/255.0 alpha: 1.0]];
+    [_exitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_exitButton addTarget:self action:@selector(exitAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+
+    UIView *footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50)];
+    [footView addSubview:_exitButton];
+    
+    [_exitButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(footView.mas_top).offset(5);
+        make.centerX.equalTo(footView.mas_centerX);
+        make.bottom.equalTo(footView.mas_bottom).offset(-5);
+        make.width.equalTo(footView.mas_width).multipliedBy(0.9);
+        
+    }];
+    
+    _infoTableView.tableFooterView = footView;
+    
+    
+    
     [self layoutSubviews];
     
 }
@@ -77,6 +102,9 @@ static NSString *infoCell = @"infoCell";
         make.left.right.equalTo(self.view);
         make.bottom.equalTo(self.view.mas_bottom);
     }];
+    
+    
+    
     
 }
 - (void)didReceiveMemoryWarning {
@@ -125,6 +153,38 @@ static NSString *infoCell = @"infoCell";
     [self.infoTableView deselectRowAtIndexPath:indexPath animated:YES];
     
     // 跳转
+    
+    
+}
+
+- (void)exitAction {
+    
+    /**
+     提示框, 提示用户是否退出
+     */
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否退出" message:@"退出将清除登录状态信息" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *backLoginAction = [UIAlertAction actionWithTitle:@"确定退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        // 清理登录信息
+        if ([[NSUserDefaults standardUserDefaults] valueForKey:@"id"]) {
+            [[[NSUserDefaults standardUserDefaults] valueForKey:@"id"] isEqualToString:@""];
+        }
+        
+        // 创建ViewController 进入登录界面
+        LoginViewController *loginVC = [[LoginViewController alloc] init];
+        
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        
+        [UIApplication sharedApplication].keyWindow.rootViewController = nav;
+    }];
+    
+    [alert addAction:cancelAction];
+    [alert addAction:backLoginAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
     
 }
 

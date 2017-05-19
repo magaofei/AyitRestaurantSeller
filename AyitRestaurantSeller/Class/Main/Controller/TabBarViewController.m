@@ -13,6 +13,8 @@
 #import "OrderManagementViewController.h"
 #import "PersonalViewController.h"
 
+#import "GMNavigationViewController.h"
+
 
 @interface TabBarViewController ()
 
@@ -45,16 +47,16 @@
     
     
     
-    UINavigationController *orderManagementNav = [[UINavigationController alloc]
+    GMNavigationViewController *orderManagementNav = [[GMNavigationViewController alloc]
                                                   initWithRootViewController:orderManagementVC];
     
-    UINavigationController *uploadGoodsNav = [[UINavigationController alloc]
+    GMNavigationViewController *uploadGoodsNav = [[GMNavigationViewController alloc]
                                               initWithRootViewController:uploadgoodsVC];
-    UINavigationController *goodsManagementNav = [[UINavigationController alloc] initWithRootViewController:goodsManagementVC];
+    GMNavigationViewController *goodsManagementNav = [[GMNavigationViewController alloc] initWithRootViewController:goodsManagementVC];
     
 #pragma mark - TODO : 下一步 ,把上传商品页面改为 present调起 
     
-    UINavigationController *personalNav = [[UINavigationController alloc]
+    GMNavigationViewController *personalNav = [[GMNavigationViewController alloc]
                                            initWithRootViewController:personalVC];
     
     [self addChildViewController:orderManagementNav];

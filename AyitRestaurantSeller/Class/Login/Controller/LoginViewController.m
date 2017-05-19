@@ -19,6 +19,7 @@
 
 #import "TabBarViewController.h"
 #import "LoginViewController.h"
+
 #import "RegisterViewController.h"
 #import "ForgetPasswordViewController.h"
 
@@ -102,7 +103,7 @@
     [_loginButton setBackgroundImage:buttonBgImage forState:UIControlStateDisabled];
     [_loginButton setTitle:@"登 录" forState:UIControlStateNormal];
     [self.view addSubview:_loginButton];
-    [_loginButton addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
+    [_loginButton addTarget:self action:@selector(loginRequestAction) forControlEvents:UIControlEventTouchUpInside];
     _loginInfoView = [[UIView alloc] init];
     [self.view addSubview:_loginInfoView];
     
@@ -259,7 +260,7 @@
     // 帐号TextField
     
     [_accountTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_loginInfoView.mas_top);
+        make.centerY.equalTo(_accountLabel.mas_centerY);
         make.right.equalTo(_loginInfoView.mas_right).offset(-10);
         make.left.equalTo(_accountLabel.mas_right).offset(20);
         //        make.centerY.equalTo(_accountLabel.mas_centerY);
@@ -276,7 +277,7 @@
     }];
     
     [_passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_loginInfoView.mas_bottom);
+        make.centerY.equalTo(_passwordLabel.mas_centerY);
         make.right.equalTo(_loginInfoView.mas_right).offset(-10);
         make.left.equalTo(_passwordLabel.mas_right).offset(20);
         //        make.centerY.equalTo(_passwordLabel.mas_centerY);
@@ -339,7 +340,7 @@
 }
 
 #pragma mark - 登录请求
-- (BOOL)cancelLogin{
+- (void)loginRequestAction{
     //用户名admin  密码test
     //    /server/authority/user/user/logon
     GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
@@ -349,15 +350,18 @@
                         
                         };
     
-    __block BOOL result = NO;
+//    __block BOOL result = NO;
     
     [manager POST:@"/server/authority/user/user/logon" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (responseObject == nil) {
             return ;
         }
-        if ([responseObject[@"success"] boolValue] == 1) {
-            [[NSUserDefaults standardUserDefaults] setValue:@"id" forKey:@"id"];
-            result = YES;
+        
+        if ([responseObject[@"success"] boolValue] == YES) {
+            NSDictionary *data = responseObject[@"data"];
+            
+            [[NSUserDefaults standardUserDefaults] setValue:data[@"id"] forKey:@"id"];
+//            result = YES;
             
             //验证成功
             [self showMainTabBarViewController];//跳转
@@ -377,7 +381,10 @@
             _tipImageView.hidden = NO;
             _tipLabel.hidden = NO;
             [_tipLabel setText:errorTip];
-            result = NO;
+//            result = NO;
+            
+            // 登录失败执行
+            [self loginButtonAction];
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -405,10 +412,11 @@
     //
     //    }
     
-    return result;
+//    return result;
     
     
 }
+
 - (void)loginButtonAction {
     //关闭键盘
     [self.view endEditing:YES];
@@ -422,26 +430,24 @@
     } completion:^(BOOL finished) {//当动画完成
         [_loadingIndicatorView stopAnimating];  //结束动画
         [_loginButton setEnabled:YES];
-        [self cancelLogin]; //当动画完成调用
+//        [self loginRequestAction]; //当动画完成调用
     }];
     
     
-    
-    
 }
 
 
 
-- (void)loginAction {
-    if ([self cancelLogin]) {
-        
-        NSLog(@"登录成功");
-    } else {
-        [self loginButtonAction];
-        
-        NSLog(@"登录失败");
-    }
-}
+//- (void)loginAction {
+//    if ([self cancelLogin]) {
+//        
+//        NSLog(@"登录成功");
+//    } else {
+//        [self loginButtonAction];
+//        
+//        NSLog(@"登录失败");
+//    }
+//}
 
 - (void)showMainTabBarViewController {
     // 创建TabBarViewController 并跳转

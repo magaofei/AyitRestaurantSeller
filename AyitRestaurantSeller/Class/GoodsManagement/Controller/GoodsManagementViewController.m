@@ -8,8 +8,10 @@
 
 #import "GoodsManagementViewController.h"
 #import "GoodsManagementTableViewCell.h"
+#import "OrderItem.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <MJRefresh/MJRefresh.h>
 
 @interface GoodsManagementViewController () <UISearchBarDelegate,UISearchResultsUpdating>
 
@@ -41,10 +43,14 @@ static NSString *cellName = @"goodsManagementCell";
     self.orderSearchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.orderSearchController.searchBar.delegate = self;
     self.orderSearchController.searchResultsUpdater = self;
-    self.tableView.tableHeaderView = self.orderSearchController.searchBar;
+//    self.tableView.tableHeaderView = self.orderSearchController.searchBar;
     
     // 用来方式SearchBar错位
     self.definesPresentationContext = YES;
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+    }];
     
     [self layoutSubviews];
     

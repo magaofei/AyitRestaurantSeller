@@ -4,25 +4,23 @@
 //
 //  Created by MAMIAN on 2017/4/16.
 //  Copyright © 2017年 Gaofei Ma. All rights reserved.
-//  根据cell的ID 获取数据
+//  根据cell的ID 获取数据5
 
 #import "OrderDetailViewController.h"
 #import "OrderDetailBottomView.h"
 #import <Masonry/Masonry.h>
 #import "OrderDetailHeaderCell.h"
-#import "OrderManagementViewController.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
-#import <SVProgressHUD/SVProgressHUD.h>
 
 
 @interface OrderDetailViewController ()
 
-@property (nonatomic, strong) UIButton *cancelOrderButton;
+//@property (nonatomic, strong) UIButton *cancelOrderButton;
+//
+//@property (nonatomic, strong) UIButton *acceptOrderButton;
 
-@property (nonatomic, strong) UIButton *acceptOrderButton;
-
-//@property (nonatomic, strong) UIButton *contactMerchantButton;
+@property (nonatomic, strong) UIButton *contactMerchantButton;
 
 @end
 
@@ -32,8 +30,6 @@
     [super viewDidLoad];
     // 获取数据
     [self initSubviews];
-    
-    self.orderItem.orderState = @"状态:商家未接受";
 }
 /**
  子View
@@ -41,12 +37,9 @@
 - (void)initSubviews {
     OrderDetailBottomView *bottomView = [[OrderDetailBottomView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50)];
     
-    _cancelOrderButton = bottomView.cancelOrderButton;
-    _acceptOrderButton = bottomView.acceptOrderButton;
-    
-    [_acceptOrderButton addTarget:self action:@selector(acceptOrderAction) forControlEvents:UIControlEventTouchUpInside];
-    [_cancelOrderButton addTarget:self action:@selector(cancelOrderAction) forControlEvents:UIControlEventTouchUpInside];
-//    _contactMerchantButton = bottomView.contactMerchantButton;
+//    _cancelOrderButton = bottomView.cancelOrderButton;
+//    _acceptOrderButton = bottomView.acceptOrderButton;
+    _contactMerchantButton = bottomView.contactMerchantButton;
     
     self.tableView.tableFooterView = bottomView;
     [self initLayoutSubviews];
@@ -89,8 +82,6 @@
         }
         
         [headerCell.merchantIconImageView sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494435312216&di=9b089188954a5dc82837a1a7a24dc66b&imgtype=0&src=http%3A%2F%2Fs1.nuomi.bdimg.com%2Fupload%2Fdeal%2F2014%2F6%2FV_L%2F1151192-fngqb4b3s6-3204626805425021.jpg"]];
-//        OrderItem *orderItem = self.orderItem;
-//        orderItem.orderState = @"状态:商家未接受";
         headerCell.orderStatusLabel.text = self.orderItem.orderState;
         
         return headerCell;
@@ -152,40 +143,6 @@
                 break;
         }
     }
-}
-
-- (void)acceptOrderAction {
-    [SVProgressHUD showSuccessWithStatus:@"接收成功"];
-    self.orderItem.orderState = @"状态:商家已接受";
-    
-    self.change(self.orderItem.orderState); //写在前面或写在dismiss的Block中都可以
-    
-//    NSDictionary *d = @{
-//                        @"orderState": self.orderItem.orderState
-//                        };
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"orderItemUpdate" object:nil userInfo:@{
-//                                                                                                        @"orderState": self.orderItem.orderState
-//                                                                                                        }];
-    
-//    orderManagerVC.orderItemAcceptUpdateValue = ^(OrderItem *orderItemBlock) {
-//        orderItemBlock = self.orderItem;
-//    };
-    
-    // 模拟延迟
-    [self.tableView reloadData];
-    
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        
-//    });
-    
-    
-    
-    
-    
-}
-
-- (void)cancelOrderAction {
-    
 }
 
 - (void)didReceiveMemoryWarning {

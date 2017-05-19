@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221714061ECF1249004E5D96 /* GMMerchantItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 221714051ECF1249004E5D96 /* GMMerchantItem.m */; };
+		221714091ECF15B2004E5D96 /* GMCommodityItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 221714081ECF15B2004E5D96 /* GMCommodityItem.m */; };
+		2217140C1ECF186D004E5D96 /* GMClientItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2217140B1ECF186D004E5D96 /* GMClientItem.m */; };
 		223DEA9C1EA1FFFD00A4766B /* GoodsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEA9B1EA1FFFD00A4766B /* GoodsItem.m */; };
 		223DEA9F1EA2021200A4766B /* GoodsItemData.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEA9E1EA2021200A4766B /* GoodsItemData.m */; };
 		223DEAA71EA318C900A4766B /* GoodsManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEAA61EA318C900A4766B /* GoodsManagementViewController.m */; };
@@ -16,12 +19,12 @@
 		223DEAB81EA3A44B00A4766B /* UploadGoodsDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223DEAB71EA3A44B00A4766B /* UploadGoodsDemo.xib */; };
 		223DEABB1EA4542C00A4766B /* GoodsManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 223DEABA1EA4542C00A4766B /* GoodsManagementTableViewCell.m */; };
 		223DEABD1EA4543B00A4766B /* GoodsManagementTableViewCellDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223DEABC1EA4543B00A4766B /* GoodsManagementTableViewCellDemo.xib */; };
+		225365371ECB082900139F88 /* GMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225365361ECB082900139F88 /* GMNavigationViewController.m */; };
 		227C015C1E9CAC8200E05BF9 /* OrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C015B1E9CAC8200E05BF9 /* OrderTableViewCell.m */; };
 		227C015F1E9CACBB00E05BF9 /* OrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C015E1E9CACBB00E05BF9 /* OrderItem.m */; };
 		227C01611E9CCD2800E05BF9 /* OrderDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 227C01601E9CCD2800E05BF9 /* OrderDemo.xib */; };
 		228F9FD21E9A3415005436F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 228F9FD11E9A3415005436F2 /* main.m */; };
 		228F9FD51E9A3415005436F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 228F9FD41E9A3415005436F2 /* AppDelegate.m */; };
-		228F9FDB1E9A3415005436F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228F9FD91E9A3415005436F2 /* Main.storyboard */; };
 		228F9FDD1E9A3415005436F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228F9FDC1E9A3415005436F2 /* Assets.xcassets */; };
 		228F9FE01E9A3415005436F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 228F9FDE1E9A3415005436F2 /* LaunchScreen.storyboard */; };
 		228F9FEB1E9A3415005436F2 /* AyitRestaurantSellerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 228F9FEA1E9A3415005436F2 /* AyitRestaurantSellerTests.m */; };
@@ -62,6 +65,12 @@
 /* Begin PBXFileReference section */
 		012C0E4FE3A4AF9488FE63E6 /* Pods-AyitRestaurantSellerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantSellerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantSellerUITests/Pods-AyitRestaurantSellerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		05B4A0646F660908AD37F840 /* Pods-AyitRestaurantSellerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AyitRestaurantSellerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AyitRestaurantSellerTests/Pods-AyitRestaurantSellerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		221714041ECF1249004E5D96 /* GMMerchantItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMMerchantItem.h; path = Class/OrderManagement/Model/GMMerchantItem.h; sourceTree = "<group>"; };
+		221714051ECF1249004E5D96 /* GMMerchantItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMMerchantItem.m; path = Class/OrderManagement/Model/GMMerchantItem.m; sourceTree = "<group>"; };
+		221714071ECF15B2004E5D96 /* GMCommodityItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMCommodityItem.h; path = Class/OrderManagement/Model/GMCommodityItem.h; sourceTree = "<group>"; };
+		221714081ECF15B2004E5D96 /* GMCommodityItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMCommodityItem.m; path = Class/OrderManagement/Model/GMCommodityItem.m; sourceTree = "<group>"; };
+		2217140A1ECF186D004E5D96 /* GMClientItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMClientItem.h; path = Class/Login/Model/GMClientItem.h; sourceTree = "<group>"; };
+		2217140B1ECF186D004E5D96 /* GMClientItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMClientItem.m; path = Class/Login/Model/GMClientItem.m; sourceTree = "<group>"; };
 		223DEA9A1EA1FFFD00A4766B /* GoodsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoodsItem.h; path = Class/UploadGoods/Model/GoodsItem.h; sourceTree = "<group>"; };
 		223DEA9B1EA1FFFD00A4766B /* GoodsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoodsItem.m; path = Class/UploadGoods/Model/GoodsItem.m; sourceTree = "<group>"; };
 		223DEA9D1EA2021200A4766B /* GoodsItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoodsItemData.h; path = Class/UploadGoods/Model/GoodsItemData.h; sourceTree = "<group>"; };
@@ -78,6 +87,8 @@
 		223DEAB91EA4542C00A4766B /* GoodsManagementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsManagementTableViewCell.h; sourceTree = "<group>"; };
 		223DEABA1EA4542C00A4766B /* GoodsManagementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsManagementTableViewCell.m; sourceTree = "<group>"; };
 		223DEABC1EA4543B00A4766B /* GoodsManagementTableViewCellDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoodsManagementTableViewCellDemo.xib; sourceTree = "<group>"; };
+		225365351ECB082900139F88 /* GMNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMNavigationViewController.h; path = Class/Main/Controller/GMNavigationViewController.h; sourceTree = "<group>"; };
+		225365361ECB082900139F88 /* GMNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMNavigationViewController.m; path = Class/Main/Controller/GMNavigationViewController.m; sourceTree = "<group>"; };
 		227C015A1E9CAC8200E05BF9 /* OrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderTableViewCell.h; path = Class/OrderManagement/View/OrderTableViewCell.h; sourceTree = "<group>"; };
 		227C015B1E9CAC8200E05BF9 /* OrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderTableViewCell.m; path = Class/OrderManagement/View/OrderTableViewCell.m; sourceTree = "<group>"; };
 		227C015D1E9CACBB00E05BF9 /* OrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderItem.h; path = Class/OrderManagement/Model/OrderItem.h; sourceTree = "<group>"; };
@@ -87,7 +98,6 @@
 		228F9FD11E9A3415005436F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		228F9FD31E9A3415005436F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		228F9FD41E9A3415005436F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		228F9FDA1E9A3415005436F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		228F9FDC1E9A3415005436F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		228F9FDF1E9A3415005436F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		228F9FE11E9A3415005436F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -286,7 +296,6 @@
 				228FA0031E9A348F005436F2 /* Class */,
 				228F9FD31E9A3415005436F2 /* AppDelegate.h */,
 				228F9FD41E9A3415005436F2 /* AppDelegate.m */,
-				228F9FD91E9A3415005436F2 /* Main.storyboard */,
 				228F9FDC1E9A3415005436F2 /* Assets.xcassets */,
 				228F9FDE1E9A3415005436F2 /* LaunchScreen.storyboard */,
 				228F9FE11E9A3415005436F2 /* Info.plist */,
@@ -399,6 +408,8 @@
 		228FA0111E9A3655005436F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2217140A1ECF186D004E5D96 /* GMClientItem.h */,
+				2217140B1ECF186D004E5D96 /* GMClientItem.m */,
 				228FA0131E9A372A005436F2 /* AccountItem.h */,
 				228FA0141E9A372A005436F2 /* AccountItem.m */,
 			);
@@ -451,6 +462,10 @@
 		228FA01D1E9A7BA1005436F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				221714071ECF15B2004E5D96 /* GMCommodityItem.h */,
+				221714081ECF15B2004E5D96 /* GMCommodityItem.m */,
+				221714041ECF1249004E5D96 /* GMMerchantItem.h */,
+				221714051ECF1249004E5D96 /* GMMerchantItem.m */,
 				227C015D1E9CACBB00E05BF9 /* OrderItem.h */,
 				227C015E1E9CACBB00E05BF9 /* OrderItem.m */,
 			);
@@ -500,6 +515,8 @@
 			children = (
 				228FA0291E9A7E5D005436F2 /* TabBarViewController.h */,
 				228FA02A1E9A7E5D005436F2 /* TabBarViewController.m */,
+				225365351ECB082900139F88 /* GMNavigationViewController.h */,
+				225365361ECB082900139F88 /* GMNavigationViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -639,7 +656,6 @@
 				228F9FDD1E9A3415005436F2 /* Assets.xcassets in Resources */,
 				223DEABD1EA4543B00A4766B /* GoodsManagementTableViewCellDemo.xib in Resources */,
 				223DEAB81EA3A44B00A4766B /* UploadGoodsDemo.xib in Resources */,
-				228F9FDB1E9A3415005436F2 /* Main.storyboard in Resources */,
 				227C01611E9CCD2800E05BF9 /* OrderDemo.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,9 +819,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221714061ECF1249004E5D96 /* GMMerchantItem.m in Sources */,
 				228FA0151E9A372A005436F2 /* AccountItem.m in Sources */,
 				229D62301EC4688A00598F26 /* OrderDetailBottomView.m in Sources */,
 				228FA0271E9A7C36005436F2 /* OrderManagementViewController.m in Sources */,
+				225365371ECB082900139F88 /* GMNavigationViewController.m in Sources */,
 				228FA0311E9B1BB7005436F2 /* ForgetPasswordViewController.m in Sources */,
 				227C015C1E9CAC8200E05BF9 /* OrderTableViewCell.m in Sources */,
 				229D622D1EC443AD00598F26 /* OrderDetailHeaderCell.m in Sources */,
@@ -813,6 +831,7 @@
 				223DEA9F1EA2021200A4766B /* GoodsItemData.m in Sources */,
 				228F9FD21E9A3415005436F2 /* main.m in Sources */,
 				223DEAAA1EA39CFD00A4766B /* AddressViewController.m in Sources */,
+				221714091ECF15B2004E5D96 /* GMCommodityItem.m in Sources */,
 				223DEABB1EA4542C00A4766B /* GoodsManagementTableViewCell.m in Sources */,
 				22D97C231EAF53F9003B242B /* GMHTTPNetworking.m in Sources */,
 				228FA02E1E9B1B9C005436F2 /* RegisterViewController.m in Sources */,
@@ -825,6 +844,7 @@
 				228FA0101E9A3651005436F2 /* LoginViewController.m in Sources */,
 				223DEAAD1EA39D1B00A4766B /* ContactInformationViewController.m in Sources */,
 				223DEA9C1EA1FFFD00A4766B /* GoodsItem.m in Sources */,
+				2217140C1ECF186D004E5D96 /* GMClientItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,14 +880,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		228F9FD91E9A3415005436F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				228F9FDA1E9A3415005436F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		228F9FDE1E9A3415005436F2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

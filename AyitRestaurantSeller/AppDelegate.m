@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "GMNavigationViewController.h"
 
 #import <AFNetworking/AFNetworking.h>
 
@@ -19,13 +20,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // 状态栏 白色
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     // 创建ViewController 进入登录界面
     LoginViewController *loginVC = [[LoginViewController alloc] init];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    GMNavigationViewController *nav = [[GMNavigationViewController alloc] initWithRootViewController:loginVC];
     
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];

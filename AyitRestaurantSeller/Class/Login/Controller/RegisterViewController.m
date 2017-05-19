@@ -192,6 +192,10 @@
             // 保存id
             [[NSUserDefaults standardUserDefaults] setValue:responseObject[@"id"] forKey:@"id"];
             
+            // 接下来是添加商户 , 包括详细信息
+//            [[NSUserDefaults standardUserDefaults] setValue:responseObject[@"userId"] forKey:@"userId"];
+            
+            
             
         } else {
             [SVProgressHUD showErrorWithStatus:@"注册失败"];

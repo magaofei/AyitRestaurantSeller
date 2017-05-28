@@ -11,9 +11,11 @@
 
 #import "UploadGoodsViewController.h"
 
+#import <SVProgressHUD/SVProgressHUD.h>
 #import <Masonry/Masonry.h>
 #import <Photos/Photos.h>
 
+#import "GMHTTPNetworking.h"
 #import <TZImagePickerController/TZImagePickerController.h>
 
 
@@ -24,6 +26,8 @@
 @property (nonatomic, strong) UITextField *inputTitleTextField;
 
 @property (nonatomic, strong) UITextView *descriptionTextView;
+
+@property (nonatomic, strong) UITextField *commodityPriceTextField;
 
 //@property (nonatomic, strong) UIImagePickerController *imagePicker;
 
@@ -75,12 +79,18 @@
     
     _inputTitleTextField = [[UITextField alloc] init];
     _inputTitleTextField.placeholder = @"请输入标题";
-    _inputTitleTextField.font = [UIFont systemFontOfSize:15];
+    _inputTitleTextField.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:_inputTitleTextField];
     
     _partingLineView = [[UIView alloc] init];
     _partingLineView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:_partingLineView];
+    
+    _commodityPriceTextField = [[UITextField alloc] init];
+    _commodityPriceTextField.keyboardType = UIKeyboardTypeNumberPad;
+    _commodityPriceTextField.placeholder = @"请输入价格";
+    _commodityPriceTextField.textColor = [UIColor colorWithRed: 255.0/255.0 green: 0.0/255.0 blue: 0.0/255.0 alpha: 1.0];
+    [self.view addSubview:_commodityPriceTextField];
     
     _descriptionTextView = [[UITextView alloc] init];
     _descriptionTextView.backgroundColor= [UIColor whiteColor];
@@ -105,6 +115,7 @@
     [_submitPublishButton setTitle:@"确认发布" forState:UIControlStateNormal];
     [_submitPublishButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 171.0/255.0 blue: 10.0/255.0 alpha: 1.0]];
     [_submitPublishButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_submitPublishButton addTarget:self action:@selector(submitPublishAction) forControlEvents:UIControlEventTouchUpInside];
     
     
     
@@ -120,10 +131,9 @@
 //    }];
     
     [_inputTitleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(70);
+        make.top.equalTo(self.mas_topLayoutGuide).offset(20);
         make.left.equalTo(_scrollView.mas_left).offset(15);
         make.right.equalTo(_scrollView.mas_right).offset(-15);
-        
     }];
     
     [_partingLineView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -132,9 +142,14 @@
         make.right.equalTo(_scrollView.mas_right).offset(-15);
         make.height.equalTo(@1);
     }];
+    [_commodityPriceTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_partingLineView.mas_bottom).offset(15);
+        make.left.equalTo(_scrollView.mas_left).offset(15);
+        make.right.equalTo(_scrollView.mas_right).offset(-15);
+    }];
     
     [_descriptionTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_partingLineView.mas_bottom).offset(5);
+        make.top.equalTo(_commodityPriceTextField.mas_bottom).offset(15);
         make.left.equalTo(_scrollView.mas_left).offset(15);
         make.right.equalTo(_scrollView.mas_right).offset(-15);
         make.height.equalTo(@100);
@@ -274,6 +289,33 @@
 }
 
 
+- (void)submitPublishAction {
+    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+    NSDictionary *p = @{
+                        @"merchantId": [[NSUserDefaults standardUserDefaults] valueForKey:@"merchantId"],
+                        @"commodityName": _inputTitleTextField.text,
+                        @"description": _descriptionTextView.text,
+                        @"price": _commodityPriceTextField.text
+                        
+                        };
+    [manager POST:@"/server/merchant/commodity/insert" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if (!responseObject) {
+            return ;
+        }
+        if ([responseObject[@"success"] boolValue] != YES) {
+            [SVProgressHUD showErrorWithStatus:@"发布失败"];
+            return ;
+        } else {
+            [SVProgressHUD showSuccessWithStatus:@"发布成功"];
+        }
+        
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
 
 
 - (void)didReceiveMemoryWarning {

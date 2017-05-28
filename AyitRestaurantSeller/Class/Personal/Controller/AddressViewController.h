@@ -10,4 +10,8 @@
 
 @interface AddressViewController : UIViewController
 
+@property (nonatomic, strong) NSString *addressStr;
+
+
+
 @end

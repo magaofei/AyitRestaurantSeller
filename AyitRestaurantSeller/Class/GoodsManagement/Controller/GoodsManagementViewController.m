@@ -9,6 +9,10 @@
 #import "GoodsManagementViewController.h"
 #import "GoodsManagementTableViewCell.h"
 #import "OrderItem.h"
+#import "GMHTTPNetworking.h"
+#import <YYModel/YYModel.h>
+#import "GMCommodityItem.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MJRefresh/MJRefresh.h>
@@ -18,6 +22,12 @@
 //@property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) UISearchController *orderSearchController;
+
+
+/**
+ 存放所有商品
+ */
+@property (nonatomic, strong) NSMutableArray *commodityItems;
 
 @end
 
@@ -32,6 +42,48 @@ static NSString *cellName = @"goodsManagementCell";
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self initSubviews];
+    
+    [self initWithData];
+}
+
+- (void)initWithData {
+    // 从服务器
+    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+    NSDictionary *p = @{
+                        @"merchantId": [[NSUserDefaults standardUserDefaults] valueForKey:@"merchantId"]
+                        };
+    
+    [manager POST:@"/server/merchant/commodity/getByMerchantId" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if (!responseObject) {
+            return ;
+        }
+        if ([responseObject[@"success"] boolValue] != YES) {
+            return ;
+        }
+        
+//        GMCommodityItem *commodityItem = [GMCommodityItem yy_modelWithJSON:responseObject[@"data"]];
+        
+//        NSArray *commodityItems = [NSArray yy_modelWithJSON:responseObject[@"data"]];
+        [self.commodityItems removeAllObjects];
+        
+//        [self.commodityItems arrayByAddingObjectsFromArray:commodityItems];
+
+        for (NSDictionary *d in responseObject[@"data"]) {
+            GMCommodityItem *item = [GMCommodityItem yy_modelWithJSON:d];
+            [self.commodityItems addObject:item];
+        }
+        
+        
+        
+        [self.tableView reloadData];
+        
+        [self.tableView.mj_header endRefreshing];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+
 }
 
 /**
@@ -49,7 +101,7 @@ static NSString *cellName = @"goodsManagementCell";
     self.definesPresentationContext = YES;
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
+        [self initWithData];
     }];
     
     [self layoutSubviews];
@@ -66,7 +118,7 @@ static NSString *cellName = @"goodsManagementCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.commodityItems.count;
 }
 
 #pragma mark - delegate
@@ -78,7 +130,14 @@ static NSString *cellName = @"goodsManagementCell";
         
     }
     
-    [self testCellData:cell];
+    
+    GMCommodityItem *commodityItem = self.commodityItems[indexPath.row];
+    cell.commodityTitleLabel.text = commodityItem.commodityName;
+    cell.commodityPriceLabel.text = [NSString stringWithFormat:@"¥%ld", commodityItem.price];
+    [cell.commodityIconImageView sd_setImageWithURL:[NSURL URLWithString:commodityItem.showImg.firstObject] placeholderImage:[UIImage imageNamed:@"maocai"]];
+    cell.commodityStatusLabel.text = @"正常发售";
+//    cell.
+//    [self testCellData:cell];
     
     // cell setup
     return cell;
@@ -104,6 +163,48 @@ static NSString *cellName = @"goodsManagementCell";
     
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        //更新数据
+        [self.commodityItems removeObjectAtIndex:indexPath.row];
+        
+        GMCommodityItem *commodityItem = self.commodityItems[indexPath.row];
+        GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+        NSDictionary *p = @{
+                            @"id": commodityItem.id
+                            };
+        [manager POST:@"/server/merchant/commodity/deleteById" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            if (!responseObject) {
+                return ;
+            }
+            if ([responseObject[@"success"] boolValue] != YES) {
+                [SVProgressHUD showSuccessWithStatus:@"删除失败"];
+                return ;
+            } else {
+                [SVProgressHUD showSuccessWithStatus:@"删除成功"];
+            }
+            
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+        }];
+        
+        //更新UI
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        
+    }
+}
+
+
+
 -(void)testCellData:(GoodsManagementTableViewCell *)cell {
     //    cell.nameLabel.text = @"联系人:李俊龙";
     
@@ -122,6 +223,14 @@ static NSString *cellName = @"goodsManagementCell";
     // Dispose of any resources that can be recreated.
 }
 
+
+- (NSMutableArray *)commodityItems {
+    if (!_commodityItems) {
+        _commodityItems = [NSMutableArray array];
+        
+    }
+    return _commodityItems;
+}
 /*
 #pragma mark - Navigation
 

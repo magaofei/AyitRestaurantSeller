@@ -25,6 +25,8 @@
 
 #import <Masonry/Masonry.h>
 #import "GMHTTPNetworking.h"
+#import "GMMerchantItem.h"
+#import <YYModel/YYModel.h>
 
 
 
@@ -360,13 +362,15 @@
         if ([responseObject[@"success"] boolValue] == YES) {
             NSDictionary *data = responseObject[@"data"];
             
-            [[NSUserDefaults standardUserDefaults] setValue:data[@"id"] forKey:@"id"];
+            [[NSUserDefaults standardUserDefaults] setValue:data[@"id"] forKey:@"userId"];
+            NSString *userId = data[@"id"];
+            
+            [self getMerchantId:userId];
+            
 //            result = YES;
             
-            //验证成功
-            [self showMainTabBarViewController];//跳转
-            _tipLabel.hidden = YES;
-            _tipImageView.hidden = YES;
+            
+           
             
         } else {
             // 登录失败
@@ -415,6 +419,39 @@
 //    return result;
     
     
+}
+
+
+/**
+ 获取商家ID
+ */
+- (void)getMerchantId:(NSString *)userId {
+    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+    NSDictionary *p = @{
+                        @"userId": userId
+                        };
+    [manager POST:@"/server/merchant/merchant/findByUserId" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (!responseObject) {
+            return ;
+        }
+        
+        if ([responseObject[@"success"] boolValue] != YES) {
+            return ;
+        }
+        
+        GMMerchantItem *merchantItem = [GMMerchantItem yy_modelWithJSON:responseObject[@"data"]];
+        
+        // 存商家ID
+        [[NSUserDefaults standardUserDefaults] setValue:merchantItem.id forKey:@"merchantId"];
+        
+        //验证成功
+        [self showMainTabBarViewController];//跳转
+        _tipLabel.hidden = YES;
+        _tipImageView.hidden = YES;
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
 }
 
 - (void)loginButtonAction {

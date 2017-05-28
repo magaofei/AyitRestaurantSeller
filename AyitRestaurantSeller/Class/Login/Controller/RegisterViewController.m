@@ -163,6 +163,8 @@
         if ([d[@"success"] boolValue] == 1) {
             _registerButton.enabled = YES;
             [_registerButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 171.0/255.0 blue: 10.0/255.0 alpha: 1.0]];
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"已经注册, 请直接登录"];
         }
         
         

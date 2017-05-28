@@ -79,7 +79,7 @@
     [_submitPasswordButton setTitle:@"提交新密码" forState:UIControlStateNormal];
     [_submitPasswordButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 120.0/255.0 blue: 102.0/255.0 alpha: 1.0]];
     [_submitPasswordButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
+    [_submitPasswordButton addTarget:self action:@selector(changePasswordAction) forControlEvents:UIControlEventTouchUpInside];
     
     [self initLayoutSubviews];
 }
@@ -140,6 +140,23 @@
         }
         
         
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
+
+
+/**
+ 修改密码
+ */
+- (void)changePasswordAction {
+    GMHTTPNetworking *manager = [GMHTTPNetworking sharedManager];
+    NSDictionary *p = @{
+                        
+                        };
+    
+    [manager POST:@"" parameters:p progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

@@ -15,6 +15,10 @@
 #import <MJRefresh/MJRefresh.h>
 #import "GMCommodityItem.h"
 #import "GMClientItem.h"
+#import "OrderItem.h"
+
+#import "GMHTTPNetworking.h"
+#import <YYModel/YYModel.h>
 
 #import "OrderDetailViewController.h"
 @interface OrderManagementViewController () <UISearchBarDelegate,UISearchResultsUpdating>
@@ -45,6 +49,7 @@ static NSString *cellName = @"orderManagementCell";
     [self initSubviews];
     
     
+    
     [self.tableView.mj_header beginRefreshing];
     
     
@@ -52,12 +57,7 @@ static NSString *cellName = @"orderManagementCell";
     
 }
 
-//- (void)orderStateUpdateAction:(NSNotification *)note {
-//    for (OrderItem *orderItem in self.orderItems) {
-//        orderItem.orderState = note.object[@"orderState"];
-//    }
-//    [self.tableView reloadData];
-//}
+
 
 /**
  初始化子视图
@@ -80,11 +80,14 @@ static NSString *cellName = @"orderManagementCell";
 //    self.navigationItem.titleView = _orderSearchBar;
 //    [self.view addSubview:_orderSearchBar];
     
+    
     self.orderSearchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.orderSearchController.searchBar.delegate = self;
     self.orderSearchController.searchResultsUpdater = self;
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        
         OrderItem *item = [[OrderItem alloc] init];
         item.merchantItem.logoImg = @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494480859592&di=0aa9752d65bb0d0a21922333a5615ac5&imgtype=0&src=http%3A%2F%2Fpic.syd.com.cn%2F0%2F101%2F21%2F05%2F101210514_000000003dc9cb4c.jpg";
         //    cell.phoneLabel.text = @"手机号:19603822432";
@@ -102,12 +105,13 @@ static NSString *cellName = @"orderManagementCell";
         clientItem.phone = @"18603822757";
         item.clientItem = clientItem;
         
-        
         [self.orderItems addObject:item];
         
         [self.tableView reloadData];
         
         [self.tableView.mj_header endRefreshing];
+        
+       
     }];
     
 //    self.tableView.tableHeaderView = self.orderSearchController.searchBar;
@@ -116,6 +120,9 @@ static NSString *cellName = @"orderManagementCell";
     
 }
 
+- (void)initWithData {
+
+}
 
 #pragma mark - TODO: 修改tableView的Y值
 - (void)layoutSubviews {

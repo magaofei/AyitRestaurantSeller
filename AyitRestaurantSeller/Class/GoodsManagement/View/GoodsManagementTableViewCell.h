@@ -19,4 +19,6 @@
 
 @property (nonatomic, strong) UILabel *commodityStatusLabel;
 
+//@property (nonatomic, strong) 
+
 @end

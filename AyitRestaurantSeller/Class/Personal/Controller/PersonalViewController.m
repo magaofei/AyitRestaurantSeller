@@ -11,6 +11,9 @@
 #import <Masonry/Masonry.h>
 #import "LoginViewController.h"
 
+#import "AddressViewController.h"
+#import "ContactInformationViewController.h"
+
 @interface PersonalViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *infoTableView;
@@ -19,6 +22,8 @@
 
 // 列表信息
 @property (nonatomic, copy) NSArray *listArr;
+
+@property (nonatomic, copy) NSArray *dataArr;
 
 
 @end
@@ -33,6 +38,7 @@ static NSString *infoCell = @"infoCell";
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.listArr = @[@"联系方式", @"地址"];
+    self.dataArr = @[@"18603822757", @"校园第一餐厅"];
     
     [self initSubviews];
     
@@ -59,7 +65,7 @@ static NSString *infoCell = @"infoCell";
     
     _exitButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_exitButton setTitle:@"退出" forState:UIControlStateNormal];
-    [_exitButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 0.0/255.0 blue: 0.0/255.0 alpha: 1.0]];
+    [_exitButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 120.0/255.0 blue: 102.0/255.0 alpha: 1.0]];
     [_exitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_exitButton addTarget:self action:@selector(exitAction) forControlEvents:UIControlEventTouchUpInside];
     
@@ -115,13 +121,22 @@ static NSString *infoCell = @"infoCell";
 
 #pragma mark - dataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.listArr.count;
+    return 1;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"联系方式";
+    } else if (section == 1) {
+        return @"地址";
+    } else {
+        return @"";
+    }
+}
 
 #pragma mark - delegate
 
@@ -131,14 +146,16 @@ static NSString *infoCell = @"infoCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:infoCell];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:infoCell];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:infoCell];
         
     }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
     
-    cell.textLabel.text = self.listArr[indexPath.row];
-
+//    cell.textLabel.text = self.listArr[indexPath.section];
+//    cell.detailTextLabel.text = self.dataArr[indexPath.section];
+    cell.textLabel.text = self.dataArr[indexPath.section];
     
     
     
@@ -153,6 +170,20 @@ static NSString *infoCell = @"infoCell";
     [self.infoTableView deselectRowAtIndexPath:indexPath animated:YES];
     
     // 跳转
+//     indexPath.section
+    
+    
+    if (indexPath.section == 0) {
+        ContactInformationViewController *contactVC = [[ContactInformationViewController alloc] init];
+        contactVC.phoneStr = self.dataArr[indexPath.section];
+        [self.navigationController pushViewController:contactVC animated:YES];
+        
+    } else if (indexPath.section == 1) {
+        AddressViewController *addressVC = [[AddressViewController alloc] init];
+        addressVC.addressStr = self.dataArr[indexPath.section];
+        [self.navigationController pushViewController:addressVC animated:YES];
+        
+    }
     
     
 }
@@ -167,9 +198,7 @@ static NSString *infoCell = @"infoCell";
     UIAlertAction *backLoginAction = [UIAlertAction actionWithTitle:@"确定退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         // 清理登录信息
-        if ([[NSUserDefaults standardUserDefaults] valueForKey:@"id"]) {
-            [[[NSUserDefaults standardUserDefaults] valueForKey:@"id"] isEqualToString:@""];
-        }
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"id"];
         
         // 创建ViewController 进入登录界面
         LoginViewController *loginVC = [[LoginViewController alloc] init];

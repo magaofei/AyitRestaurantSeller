@@ -10,4 +10,8 @@
 
 @interface ContactInformationViewController : UIViewController
 
+@property (nonatomic, strong) NSString *phoneStr;
+
+
+
 @end

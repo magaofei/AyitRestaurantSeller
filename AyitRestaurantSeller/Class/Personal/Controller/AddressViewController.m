@@ -8,9 +8,13 @@
 
 #import "AddressViewController.h"
 
+#import <Masonry/Masonry.h>
+
 @interface AddressViewController ()
 
-@property (nonatomic, strong) UITextView *addressTextView;
+@property (nonatomic, strong) UITextField *addressTextField;
+
+@property (nonatomic, strong) UIButton *submitChangeButton;
 
 @end
 
@@ -35,8 +39,37 @@
 }
 
 - (void)initSubviews {
-    _addressTextView = [[UITextView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [self.view addSubview:_addressTextView];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    _addressTextField = [[UITextField alloc] init];
+    _addressTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _addressTextField.placeholder = self.addressStr;
+    [self.view addSubview:_addressTextField];
+    
+    _submitChangeButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_submitChangeButton setTitle:@"确认修改" forState:UIControlStateNormal];
+    _submitChangeButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [_submitChangeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_submitChangeButton setBackgroundColor:[UIColor colorWithRed: 255.0/255.0 green: 120.0/255.0 blue: 102.0/255.0 alpha: 1.0]];
+    
+    [self.view addSubview:_submitChangeButton];
+    
+    [self initLayoutSubviews];
+}
+
+- (void)initLayoutSubviews {
+    [_addressTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.equalTo(self.view).offset(20);
+        make.right.equalTo(self.view.mas_right).offset(-20);
+    }];
+    
+    [_submitChangeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_addressTextField.mas_bottom).offset(30);
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.width.equalTo(self.view.mas_width).multipliedBy(0.7);
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

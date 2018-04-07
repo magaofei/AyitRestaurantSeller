@@ -611,17 +611,20 @@
 					228F9FCC1E9A3415005436F2 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = N5G28WF2Y2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					228F9FE51E9A3415005436F2 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = N5G28WF2Y2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 228F9FCC1E9A3415005436F2;
 					};
 					228F9FF01E9A3415005436F2 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = N5G28WF2Y2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 228F9FCC1E9A3415005436F2;
 					};
@@ -994,6 +997,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantSeller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1008,6 +1012,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantSeller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1021,6 +1026,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantSellerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AyitRestaurantSeller.app/AyitRestaurantSeller";
 			};
 			name = Debug;
@@ -1035,6 +1041,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantSellerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AyitRestaurantSeller.app/AyitRestaurantSeller";
 			};
 			name = Release;
@@ -1048,6 +1055,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantSellerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AyitRestaurantSeller;
 			};
 			name = Debug;
@@ -1061,6 +1069,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.magaofei.AyitRestaurantSellerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = AyitRestaurantSeller;
 			};
 			name = Release;
